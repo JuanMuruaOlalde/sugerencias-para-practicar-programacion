@@ -35,6 +35,7 @@ Peso: 56,3 Kg (el 22/11/2021)
 ================================
 ````
 
-# Tareas complementarias:
+# Tareas extendidas (opcionales):
+
 - Mejor si se utiliza una expresión regular para indicar la marca de división. `(\s+:\s+)` Así se pueden indicar "cualquier número de espacios o de caracteres blancos (tabuladores o similares)", tanto por delante de los dospuntos como por detrás. 
 
