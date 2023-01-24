@@ -1,6 +1,6 @@
 # Introducción
 
-Los datos que se guardan en un archivo de texto plano van repartidos en filas. Cada fila es un registro.
+Los datos que se guardan en un archivo de texto plano van repartidos en filas (cada fila es un registro).
 
 Los datos en cada registro (los campos). Se separan uno del otro con una marca específica.
 
