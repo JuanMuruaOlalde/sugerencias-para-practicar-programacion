@@ -2,14 +2,23 @@
 
 Los datos que se guardan en un archivo de texto plano van repartidos en filas. Cada fila es un registro.
 
-Los distintos datos de cada registro, los distintos campos. Se separan uno del otro con una marca específica.
+Los datos en cada registro (los campos). Se separan uno del otro con una marca específica.
 
 Las marcas de división más habituales suelen ser las "comas" (,) o los "punto y coma" (;).
 Pero la mejor marca es la combinación "espacios dospuntos espacios" ( : ).
 
+Por otro lado, es necesario tener en cuenta que las fechas y los números tienen distintas representaciones. Según el pais o la cultura en la que se esté trabajando.
+- [Date and Time representation by country](https://en.wikipedia.org/wiki/Category:Date_and_time_representation_by_country) 
+- [Date format by country](https://en.wikipedia.org/wiki/Date_format_by_country)
+- [Decimal separator and digit grouping mark](https://en.wikipedia.org/wiki/Decimal_separator)
+
+Y, para terminar, comentar la importancia de que todo número lleve de alguna forma asociada su unidad de medida. (Se han producido muchísimos errores debidos a malinterpretaciones. Por ejemplo: https://en.wikipedia.org/wiki/Unit_of_measurement#Real-world_implications)
+
 # Tareas a realizar:
 
-- Crear una clase "Persona" con los atributos y constructor correspondientes.
+- Crear una clase "Persona" con los atributos y el constructor correspondientes.
+
+- Poner a esa clase "Persona" metodos getter para todos los atributos. Ponerle también un metodo setter para cambiar el peso y la fecha de medicion.
 
 - Leer el archivo de texto que se suministra.
 ````
@@ -24,9 +33,9 @@ Luisa    : Perez Bila    : 23/07/1985 :   56,2  :  161,5    : 22/11/2021
 
 - Crear instancias de un objeto "persona" para cada registro e inicializarlas con los datos correspondientes.
 
-- Guardar todos esos objetos en una lista de personas.
+- Guardar todos esas instancias en una lista de personas.
 
-- Recorrer la lista e imprimirla en pantalla: cada persona volcada en una especie de ficha de cuatro lineas, por ejemplo
+- Recorrer la lista e imprimirla en pantalla: cada persona se representará en una especie de ficha de cuatro lineas, por ejemplo
 ````
 Pedro Rodriguez Pike
 Fecha de nacimiento: 23/04/1973
@@ -39,3 +48,8 @@ Peso: 56,3 Kg (el 22/11/2021)
 
 - Mejor si se utiliza una expresión regular para indicar la marca de división. `(\s+:\s+)` Así se pueden indicar "cualquier número de espacios o de caracteres blancos (tabuladores o similares)", tanto por delante de los dospuntos como por detrás. 
 
+- Si la lectura de fechas se complica, se puede relajar el ejercicio y simplificarlo usando strings en lugar de fechas.
+
+- Si la lectura de números se complica, se puede relajar el ejercicio y simplificarlo usando strings en lugar de números.
+
+- Seria interesante poder disponer de una lista de mediciones de peso. Es decir, guardar en una lista la medida anterior cada vez que se ejecute el metodo setter para poner una nueva medida.

@@ -1,17 +1,15 @@
-package ArchivoDeTextoPlano.muestras_de_posibles_soluciones.java;
-
-import java.time.LocalDate;
+package ArchivoDeTextoPlano.muestras_de_posibles_soluciones.java_simplificada;
 
 public class Persona {
     String nombre;
     String apellidos;
-    java.time.LocalDate nacimiento;
-    Double peso_kg;
-    Double altura_cm;
-    java.time.LocalDate fecha_medicion;
+    String nacimiento;
+    String peso_kg;
+    String altura_cm;
+    String fecha_medicion;
 
-    public Persona(String nombre, String apellidos, LocalDate nacimiento, Double peso_kg, Double altura_cm,
-    LocalDate fecha_medicion) {
+    public Persona(String nombre, String apellidos, String nacimiento, String peso_kg, String altura_cm,
+    String fecha_medicion) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nacimiento = nacimiento;
@@ -36,23 +34,23 @@ public class Persona {
         return apellidos;
     }
 
-    public LocalDate getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public Double getPeso_kg() {
+    public String getPeso_kg() {
         return peso_kg;
     }
 
-    public Double getAltura_cm() {
+    public String getAltura_cm() {
         return altura_cm;
     }
 
-    public LocalDate getFecha_medicion() {
+    public String getFecha_medicion() {
         return fecha_medicion;
     }
 
-    public void setPeso_kg(Double peso_kg, LocalDate fecha_medicion) {
+    public void setPeso_kg(String peso_kg, String fecha_medicion) {
         this.peso_kg = peso_kg;
         this.fecha_medicion = fecha_medicion;
     }
