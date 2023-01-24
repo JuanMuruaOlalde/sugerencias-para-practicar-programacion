@@ -1,4 +1,4 @@
-# Sugerencias para prácticar programación
+# Sugerencias para practicar programación
 
 La descripción de tareas en cada sugerencia está en el respectivo archivo ENUNCIADO.md dentro de cada carpeta.
 
