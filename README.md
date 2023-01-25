@@ -12,11 +12,17 @@ Se agradecen propuestas, comentarios, críticas y sugerencias: https://github.co
 
 - versión simplificada de ArchivoDeTextoPlano
 
-Puedes encontrar más muestras de código y sugerencias de temas para estudiar en mi libro ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
+- CodigoMorse
+
+- NumBinHex
+
+Puedes encontrar más sugerencias de temas para estudiar, en mi libro ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
 
 ## Prácticas "para avanzar"
 
 - ArchivoDeTextoPlano
+
+- versión extendida de NumBinHex
 
 Puedes encontrar más sugerencias de práctica en los capítulos "ejercicios" de mi libro ["Más allá del IF y del WHILE".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/02-Mas_alla_del_IF_y_del_WHILE/Mas_alla_del_IF_y_del_WHILE.pdf)
 
