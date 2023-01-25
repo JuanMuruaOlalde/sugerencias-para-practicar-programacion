@@ -44,11 +44,12 @@ Peso: 56.3 kg   (medido el 2021-11-22)
 =======================================
 ````
 
-# Tareas extendidas (opcionales):
 
-notas:
-    - Si la lectura de fechas se complica, se puede relajar el ejercicio y simplificarlo usando propiedades tipo texto en lugar de un tipo fecha propiamente dicho.
-    - Si la lectura de números se complica, se puede relajar el ejercicio y simplificarlo usando propiedades tipo texto en lugar un tipo numero propiamente dicho.
+## Posibilidad de simplificar la práctica:
+- Si la lectura y conversión de fechas se complica, se pueden utilizar directamente propiedades tipo texto en lugar de un tipo fecha propiamente dicho.
+- Si la lectura y conversión de números se complica, se pueden utilizar directamente propiedades tipo texto en lugar un tipo numero propiamente dicho.
+
+# Tareas extras (opcionales):
 
 - Al trocear cada linea, seria interesante utilizar una expresión regular para indicar la marca de división. `(\s+:\s+)` Así se pueden indicar "cualquier número de espacios o de caracteres blancos (tabuladores o similares)", tanto por delante de los dospuntos como por detrás. 
 
