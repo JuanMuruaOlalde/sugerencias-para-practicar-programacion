@@ -10,11 +10,13 @@ Se agradecen propuestas, comentarios, críticas y sugerencias: https://github.co
 
 - CuentaBancaria
 
-- versión simplificada de ArchivoDeTextoPlano
-
 - CodigoMorse
 
 - NumBinHex
+
+- versión simplificada de ArchivoDeTextoPlano
+
+
 
 Puedes encontrar más sugerencias de temas para estudiar, en mi libro ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
 
@@ -22,10 +24,10 @@ Puedes encontrar más sugerencias de temas para estudiar, en mi libro ["El códi
 
 - ArchivoDeTextoPlano
 
-- versión extendida de NumBinHex
+
 
 Puedes encontrar más sugerencias de práctica en los capítulos "ejercicios" de mi libro ["Más allá del IF y del WHILE".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/02-Mas_alla_del_IF_y_del_WHILE/Mas_alla_del_IF_y_del_WHILE.pdf)
 
-Algunas muestras de soluciones a esos ejercicios del libro están en esta carpeta: https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/tree/main/02-Mas_alla_del_IF_y_del_WHILE
+Algunas muestras de soluciones a esos ejercicios del libro están en su carpeta: https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/tree/main/02-Mas_alla_del_IF_y_del_WHILE
 
  
