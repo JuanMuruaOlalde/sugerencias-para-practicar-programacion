@@ -36,4 +36,4 @@ Puedes encontrar más sugerencias de práctica en los capítulos de ejercicios d
 
 [Albaranes](https://github.com/JuanMuruaOlalde/Albaranes)
 
-[Hotel] (https://github.com/JuanMuruaOlalde/Hotel)
+[Hotel](https://github.com/JuanMuruaOlalde/Hotel)
