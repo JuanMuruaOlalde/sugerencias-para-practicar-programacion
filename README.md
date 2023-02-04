@@ -8,26 +8,22 @@ Se agradecen propuestas, comentarios, críticas y sugerencias: https://github.co
 
 ## Prácticas "para empezar"
 
-- CuentaBancaria
+-   ProcesandoListas
 
-- CodigoMorse
+-   CuentaBancaria
 
-- NumBinHex
+-   CodigoMorse
 
-- versión simplificada de ArchivoDeTextoPlano
+-   ContadorAlfabetico
 
+-   NumBinHex
 
+-   versión simplificada de ArchivoDeTextoPlano
 
-Puedes encontrar más sugerencias de temas para estudiar, en mi libro ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
+Puedes encontrar más muestras de código en el documento ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
 
 ## Prácticas "para avanzar"
 
-- ArchivoDeTextoPlano
+-   ArchivoDeTextoPlano
 
-
-
-Puedes encontrar más sugerencias de práctica en los capítulos "ejercicios" de mi libro ["Más allá del IF y del WHILE".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/02-Mas_alla_del_IF_y_del_WHILE/Mas_alla_del_IF_y_del_WHILE.pdf)
-
-Algunas muestras de soluciones a esos ejercicios del libro están en su carpeta: https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/tree/main/02-Mas_alla_del_IF_y_del_WHILE
-
- 
+Puedes encontrar más sugerencias de práctica en los capítulos de ejercicios del documento ["Más allá del IF y del WHILE".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/02-Mas_alla_del_IF_y_del_WHILE/Mas_alla_del_IF_y_del_WHILE.pdf)
