@@ -58,10 +58,9 @@ En un principio se trata de resolver la funcionalidad. Pero en los programas rea
 
 En el paradigma de la `programación funcional`. Algunas de estas tareas tienen formas propias de hacerse:
 
-- `filter(lista, función)`, aplicar una función (con resultado booleano) a todos y cada uno de los elementos de una lista, devolviendo otra lista con aquellos elementos donde la función devuelve 'verdadero'.
-
 - `map(lista, función)`, aplicar una función a todos y cada uno de los elementos de una lista, devolviendo otra lista con el mismo número de elementos (cada uno transformado por la función).
 
 - `reduce(lista, función)`, similar a map, solo que la función se aplica sobre los elementos secuencialmente, devolviendo un resultado único (acumulado a partir de los resultados parciales de la función en los distintos elementos).
 
-- `pattern matching`, comparar una expresión contra unos determinados patrones, para sustituirla por otra expresión dada según el patrón con el que coincida.
+- `filter(lista, función)`, aplicar una función (con resultado booleano) a todos y cada uno de los elementos de una lista, devolviendo otra lista con aquellos elementos donde la función devuelve 'verdadero'.
+
