@@ -52,7 +52,7 @@ En un principio se trata de resolver la funcionalidad. Pero en los programas rea
 
 - La suma total es más legible si lleva separador de miles.
 
-- Las temperaturas quedan mejor truncadas a dos decimales, las humedades truncadas a número entero y la lluvia truncada a un decimal. Las unidades de medida son imprescindibles en toda cantidad que deba llevarlas.
+- Las temperaturas quedan mejor mostrando dos decimales, las humedades mostrando número entero y la lluvia mostrando un decimal. Las unidades de medida son imprescindibles en toda cantidad que deba llevarlas.
 
 # Una pista para el futuro...
 
