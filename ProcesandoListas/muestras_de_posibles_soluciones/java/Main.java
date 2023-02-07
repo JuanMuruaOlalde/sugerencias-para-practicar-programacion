@@ -1,17 +1,20 @@
 package ProcesandoListas.muestras_de_posibles_soluciones.java;
 
+import java.util.ArrayList;
+import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String args[]) {
 
         Integer[] arrayOriginal = {34, 76, 295, 17, 861, 5, 95, 127, 3, 99, 26, 49, 117, 532, 15, 88, 2, 31};
-        java.util.ArrayList<Integer> listaOriginal = new java.util.ArrayList<>();
+        ArrayList<Integer> listaOriginal = new ArrayList<>();
         java.util.Collections.addAll(listaOriginal, arrayOriginal);
         System.out.println();
         System.out.println("La lista original: " + listaOriginal.toString());
 
 
-        java.util.ArrayList<Integer> listaDuplicada = new java.util.ArrayList<>();
+        ArrayList<Integer> listaDuplicada = new ArrayList<>();
         for (Integer unNumero : listaOriginal) {
             listaDuplicada.add(unNumero * 2);
         }
@@ -27,7 +30,7 @@ public class Main {
         System.out.format("Los elementos de la lista original suman %,d \n" , suma);
 
 
-        java.util.ArrayList<Integer> soloImpares = new java.util.ArrayList<>();
+        ArrayList<Integer> soloImpares = new ArrayList<>();
         for (Integer unNumero : listaOriginal) {
             if(unNumero % 2 > 0) {
                 soloImpares.add(unNumero);
@@ -37,7 +40,7 @@ public class Main {
         System.out.println("Los impares de la lista son: " + soloImpares.toString());
 
 
-        java.util.ArrayList<Double> listaIncrementada = new java.util.ArrayList<>();
+        ArrayList<Double> listaIncrementada = new ArrayList<>();
         for (Integer unNumero : listaOriginal) {
             listaIncrementada.add(unNumero + (unNumero * 0.30));
         }
@@ -46,12 +49,12 @@ public class Main {
 
 
         System.out.println();
-        java.util.ArrayList<MedicionMetereologica> mediciones = new java.util.ArrayList<>();
-        mediciones.add(new MedicionMetereologica(java.time.LocalDate.of(2023, 2, 14), 15.3, 4.6, 68, 45, 0.0));
-        mediciones.add(new MedicionMetereologica(java.time.LocalDate.of(2023, 2, 15), 18.2, 3.5, 78, 54, 2.5));
-        mediciones.add(new MedicionMetereologica(java.time.LocalDate.of(2023, 2, 16), 19.8, 2.6, 47, 41, 0.0));
-        mediciones.add(new MedicionMetereologica(java.time.LocalDate.of(2023, 2, 17), 17.3, 1.9, 52, 35, 7.5));
-        mediciones.add(new MedicionMetereologica(java.time.LocalDate.of(2023, 2, 18), 12.9, 3.7, 64, 43, 9.0));
+        ArrayList<MedicionMetereologica> mediciones = new ArrayList<>();
+        mediciones.add(new MedicionMetereologica(LocalDate.of(2023, 2, 14), 15.3, 4.6, 68, 45, 0.0));
+        mediciones.add(new MedicionMetereologica(LocalDate.of(2023, 2, 15), 18.2, 3.5, 78, 54, 2.5));
+        mediciones.add(new MedicionMetereologica(LocalDate.of(2023, 2, 16), 19.8, 2.6, 47, 41, 0.0));
+        mediciones.add(new MedicionMetereologica(LocalDate.of(2023, 2, 17), 17.3, 1.9, 52, 35, 7.5));
+        mediciones.add(new MedicionMetereologica(LocalDate.of(2023, 2, 18), 12.9, 3.7, 64, 43, 9.0));
         System.out.println();
         System.out.println("Con estos datos de partida:");
         Double sumaDeMaximas = 0.0;
