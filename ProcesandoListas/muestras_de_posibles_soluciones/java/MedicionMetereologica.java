@@ -1,12 +1,12 @@
 package ProcesandoListas.muestras_de_posibles_soluciones.java;
 
 public class MedicionMetereologica {
-    java.time.LocalDate fecha;
-    Double temperatura_max_celsius;
-    Double temperatura_min_celsius;
-    Integer humedad_max_porcentaje;
-    Integer humedad_min_porcentaje;
-    Double lluvia_litrospormetrocuadrado;
+    private java.time.LocalDate fecha;
+    private Double temperatura_max_celsius;
+    private Double temperatura_min_celsius;
+    private Integer humedad_max_porcentaje;
+    private Integer humedad_min_porcentaje;
+    private Double lluvia_litrospormetrocuadrado;
     
     public MedicionMetereologica(java.time.LocalDate fecha, 
                                  Double temperatura_max_celsius, Double temperatura_min_celsius,
