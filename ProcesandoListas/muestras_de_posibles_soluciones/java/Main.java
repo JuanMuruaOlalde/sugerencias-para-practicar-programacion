@@ -68,7 +68,7 @@ public class Main {
         Double temperaturaMediaMax = sumaDeMaximas / mediciones.size();
         Double temperaturaMediaMin = sumaDeMinimas / mediciones.size();
         System.out.println();
-        System.out.format("Nos da una temperatura media máxima de %.2f °C y mínima de %.2f °C",
+        System.out.format("Nos da una temperatura media máxima de %.2f °C y media mínima de %.2f °C",
                           temperaturaMediaMax, temperaturaMediaMin);
         System.out.println();
         System.out.println();
