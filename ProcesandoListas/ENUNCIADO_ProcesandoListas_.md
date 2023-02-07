@@ -46,6 +46,14 @@ Y con ella:
 
 # Tareas extras (opcionales)
 
+En un principio se trata de resolver la funcionalidad. Pero en los programas reales es tanto o más importante la buena (y clara) presentación cara a las personas que los van a utilizar. En ese sentido, aquí mereceria prestar atención a:
+
+- El formato de números (separador decimal, separador de grupos de cifras) y el formato de fechas, han de ser acordes a las costumbres del pais donde estemos.
+
+- La suma total es más legible si lleva separador de miles.
+
+- Las temperaturas quedan mejor truncadas a dos decimales, las humedades truncadas a número entero y la lluvia truncada a un decimal. Las unidades de medida son imprescindibles en toda cantidad que deba llevarlas.
+
 # Una pista para el futuro...
 
 En el paradigma de la `programación funcional`. Algunas de estas tareas tienen formas propias de hacerse:
