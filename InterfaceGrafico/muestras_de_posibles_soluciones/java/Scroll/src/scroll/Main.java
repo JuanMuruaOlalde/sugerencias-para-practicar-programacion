@@ -1,7 +1,5 @@
 package InterfaceGrafico.muestras_de_posibles_soluciones.java.Scroll.src.scroll;
 
-import scroll.InterfazGraficoDeUsuario;
-
 public class Main {
 
 	public static void main(String[] args) {
