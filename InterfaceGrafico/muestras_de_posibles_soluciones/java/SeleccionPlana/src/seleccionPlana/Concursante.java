@@ -1,4 +1,4 @@
-package seleccionPlana;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.SeleccionPlana.src.seleccionPlana;
 
 public class Concursante {
 	private String nombre;

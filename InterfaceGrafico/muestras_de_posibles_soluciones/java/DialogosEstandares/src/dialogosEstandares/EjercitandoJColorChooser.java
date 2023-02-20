@@ -1,4 +1,4 @@
-package dialogosEstandares;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.DialogosEstandares.src.dialogosEstandares;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

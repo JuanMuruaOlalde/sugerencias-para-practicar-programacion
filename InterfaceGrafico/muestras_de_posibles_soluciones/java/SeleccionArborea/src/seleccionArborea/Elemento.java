@@ -1,4 +1,4 @@
-package seleccionArborea;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.SeleccionArborea.src.seleccionArborea;
 
 public abstract class Elemento {
 	

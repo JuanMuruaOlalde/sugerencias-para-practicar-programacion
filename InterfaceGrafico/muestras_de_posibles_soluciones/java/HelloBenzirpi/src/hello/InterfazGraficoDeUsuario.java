@@ -1,4 +1,4 @@
-package hello;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.HelloBenzirpi.src.hello;
 
 import java.awt.*;
 import java.awt.event.*;

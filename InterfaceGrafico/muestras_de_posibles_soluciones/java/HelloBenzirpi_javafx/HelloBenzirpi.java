@@ -1,4 +1,4 @@
-package es.susosise.ejerciciosJava;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.HelloBenzirpi_javafx;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;

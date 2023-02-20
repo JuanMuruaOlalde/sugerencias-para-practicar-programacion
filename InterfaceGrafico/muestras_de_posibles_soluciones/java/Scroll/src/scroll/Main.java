@@ -1,4 +1,4 @@
-package scroll;
+package InterfaceGrafico.muestras_de_posibles_soluciones.java.Scroll.src.scroll;
 
 import scroll.InterfazGraficoDeUsuario;
 
