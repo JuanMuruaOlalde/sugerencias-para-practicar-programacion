@@ -1,6 +1,5 @@
 package InterfaceGrafico.muestras_de_posibles_soluciones.java.SeleccionArborea.src.seleccionArborea;
 
-import seleccionArborea.InterfazGraficoDeUsuario;
 
 public class Main {
 
