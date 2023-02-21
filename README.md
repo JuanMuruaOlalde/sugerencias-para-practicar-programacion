@@ -8,27 +8,36 @@ Se agradecen propuestas, comentarios, críticas, sugerencias,...: https://github
 
 ## Prácticas "para empezar"
 
--   ProcesandoListas
+- ProcesandoListas
 
--   CuentaBancaria
+- CuentaBancaria
 
--   CodigoMorse
+- CodigoMorse
 
--   ContadorAlfabetico
+- ContadorAlfabetico
 
--   versión simplificada de ArchivoDeTextoPlano
+- versión simplificada de ArchivoDeTextoPlano
 
-Puedes encontrar más muestras de código en el documento ["El código fuente no muerde".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/01-ElCodigoFuenteNoMuerde/ElCodigoFuenteNoMuerde.pdf)
 
 ## Prácticas "para continuar"
 
--   Las tareas extras opcionales en las prácticas anteriores.
+- Las tareas extras opcionales en las prácticas anteriores.
 
--   ArchivoDeTextoPlano
+- ArchivoDeTextoPlano
 
--   NumBinHex
+- Ascensores
 
-Puedes encontrar más sugerencias de práctica en los capítulos de ejercicios del documento ["Más allá del IF y del WHILE".](https://github.com/JuanMuruaOlalde/DesarrolloDeSoftware/blob/main/02-Mas_alla_del_IF_y_del_WHILE/Mas_alla_del_IF_y_del_WHILE.pdf)
+- InterfaceGrafico
+
+- NumBinHex
+
+## Prácticas "para avanzar"
+
+- Multiinterface
+
+- MVC
+
+- Hotel
 
 ## Otras muestras de código
 
