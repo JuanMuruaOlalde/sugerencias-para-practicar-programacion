@@ -64,7 +64,7 @@ y que se le pueda hacer llegar de forma asíncrona.
 
 Aquí van algunas fichas con casos de uso a implementar y tareas a realizar. Las podemos recortar y poner en el tablón de gestión del proyecto si es que llevamos alguno. (nota: No están en orden, cada cual tendrá que reorganizarlas según las prioridades que estime oportuno.)
 
-nota: Es importante es abordar una ficha cada vez; y no pasar a otra ficha hasta la ficha en curso esté totalmente terminada del todo, completamente. ("done, done")
+nota: Es importante abordar una ficha cada vez; y no pasar a otra ficha hasta la ficha en curso esté totalmente terminada del todo, completamente. ("done, done")
 
 ----
 
