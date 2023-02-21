@@ -1,7 +1,7 @@
 
 ## Caso de uso:
 
-![caso de uso](.\imagenes\cuentas_bancarias-caso_de_uso.png)
+![caso de uso](./imagenes/cuentas_bancarias-caso_de_uso.png)
 
 Nota: Para simplificar el ejercicio, cada cuenta tendrá un solo cliente titular. Aunque un mismo cliente podrá ser titular de varias cuentas.
 
