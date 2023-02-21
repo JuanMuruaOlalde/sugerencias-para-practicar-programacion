@@ -82,7 +82,7 @@ La forma de validar sera:
 
 - realizar cada una de las operaciones posibles en el sistema: consultar, crear, modificar, etc.
 
-- consultar el registro para ver que todas y cada una de las operaciones se han registrado correctamente: fecha, hora, tipo de operación, datos afectados por la operación (nota: en las modificaciones, incluir tanto los datos ``antes'' como los datos ``después'').
+- consultar el registro para ver que todas y cada una de las operaciones se han registrado correctamente: fecha, hora, tipo de operación, datos afectados por la operación (nota: en las modificaciones, incluir tanto los datos "antes" como los datos "después").
 
 ----
 
