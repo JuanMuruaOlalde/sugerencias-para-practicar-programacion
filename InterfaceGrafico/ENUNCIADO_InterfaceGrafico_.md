@@ -49,7 +49,7 @@ Cuando se desea permitir al usuario modificar sobre la marcha el espacio dedicad
 
 Pedir una fecha mostrando un calendario.
 
-![pantallazo de como quedaria ejercicio Calendario](./imagenes/pendientedeponer.png)
+![pantallazo de como quedaria ejercicio Calendario](./imagenes/Calendario-pantallazo-JavaFX.png)
 
 ## Selección arbórea
 

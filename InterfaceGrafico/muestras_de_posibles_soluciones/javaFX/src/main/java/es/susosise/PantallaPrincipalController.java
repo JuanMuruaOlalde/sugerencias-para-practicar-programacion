@@ -10,5 +10,10 @@ public class PantallaPrincipalController {
         App.setRoot("hello_benzirpi");
     }
     
+    @FXML
+    private void cargarPantallaCalendario() throws IOException {
+        App.setRoot("calendario");
+    }
+    
 }
         
