@@ -10,26 +10,24 @@
 <?import javafx.geometry.Insets?>
 
 <VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.susosise.HelloBenzirpiController">
-   <children> 
-      <Button fx:id="btnVolverAPantallaPrincipal" onAction="#volverAPantallaPrincipal" style="-fx-background-image: url('@icons8-home-page-64.png');" >
-          <graphic>      
-              <ImageView>
-               <image>
-                  <Image url="@images/icons8-home-page-25.png" />
-               </image>
-            </ImageView>
-           </graphic>
-           </Button>
-      <HBox spacing="20.0" >
-         <children>
-               <Label fx:id="lblNombre" text="Teclea un nombre: " />
-               <TextField fx:id="txtNombre" />
-               <Button fx:id="btnSaludar" text="Saludar" onAction="#saludar" />
-               <Label fx:id="lblSaludo" text="" minWidth="100" />
-         </children>
-      </HBox>
-    </children>
-    <padding>
-       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+   <Button fx:id="btnVolverAPantallaPrincipal" onAction="#volverAPantallaPrincipal" style="-fx-background-image: url('@icons8-home-page-64.png');" >
+         <graphic>      
+            <ImageView>
+            <image>
+               <Image url="@images/icons8-home-page-25.png" />
+            </image>
+         </ImageView>
+         </graphic>
+         </Button>
+   <HBox spacing="20.0" >
+      <children>
+            <Label fx:id="lblNombre" text="Teclea un nombre: " />
+            <TextField fx:id="txtNombre" />
+            <Button fx:id="btnSaludar" text="Saludar" onAction="#saludar" />
+            <Label fx:id="lblSaludo" text="" minWidth="100" />
+      </children>
+   </HBox>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </VBox>

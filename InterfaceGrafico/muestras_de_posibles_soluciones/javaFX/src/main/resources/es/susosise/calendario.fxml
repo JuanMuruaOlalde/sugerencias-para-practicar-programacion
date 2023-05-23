@@ -10,25 +10,23 @@
 <?import javafx.geometry.Insets?>
 
 <VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.susosise.CalendarioController">
-   <children> 
-      <Button fx:id="btnVolverAPantallaPrincipal" onAction="#volverAPantallaPrincipal" style="-fx-background-image: url('@icons8-home-page-64.png');" >
-          <graphic>      
-              <ImageView>
-               <image>
-                  <Image url="@images/icons8-home-page-25.png" />
-               </image>
-            </ImageView>
-           </graphic>
-           </Button>
-      <VBox spacing="20.0" >
-         <children>
-               <DatePicker fx:id="dpkFechaElegida" />
-               <Button fx:id="btnAvisar" text="Avisar" onAction="#avisar" />
-               <Label fx:id="lblAviso" />
-         </children>
-      </VBox>
-    </children>
-    <padding>
-       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+   <Button fx:id="btnVolverAPantallaPrincipal" onAction="#volverAPantallaPrincipal" style="-fx-background-image: url('@icons8-home-page-64.png');" >
+         <graphic>      
+            <ImageView>
+            <image>
+               <Image url="@images/icons8-home-page-25.png" />
+            </image>
+         </ImageView>
+         </graphic>
+         </Button>
+   <VBox spacing="20.0" >
+      <children>
+            <DatePicker fx:id="dpkFechaElegida" />
+            <Button fx:id="btnAvisar" text="Avisar" onAction="#avisar" />
+            <Label fx:id="lblAviso" />
+      </children>
+   </VBox>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </VBox>

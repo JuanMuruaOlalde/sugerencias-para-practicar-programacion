@@ -34,29 +34,29 @@ public class BocatasController {
         if (panNormal.isSelected()) {
             composicionDelBocata.append("pan normal");
         }
-        if (panIntegral.isSelected()) {
+        else if (panIntegral.isSelected()) {
             composicionDelBocata.append("pan integral");
         }
-        if (panBagete.isSelected()) {
+        else if (panBagete.isSelected()) {
             composicionDelBocata.append("pan bagete");
         }
-        if (panDeMolde.isSelected()) {
+        else if (panDeMolde.isSelected()) {
             composicionDelBocata.append("pan de molde");
         }
         composicionDelBocata.append(", de ");
         if (lomo.isSelected()) {
             composicionDelBocata.append("lomo, ");
         }
-        if (tortillaJamonYork.isSelected()) {
+        else if (tortillaJamonYork.isSelected()) {
             composicionDelBocata.append("tortilla de jamon York, ");
         }
-        if (tortillaAtun.isSelected()) {
+        else if (tortillaAtun.isSelected()) {
             composicionDelBocata.append("tortilla de atun, ");
         }
-        if (tortillaQueso.isSelected()) {
+        else if (tortillaQueso.isSelected()) {
             composicionDelBocata.append("tortilla de queso, ");
         }
-        if (calamares.isSelected()) {
+        else if (calamares.isSelected()) {
             composicionDelBocata.append("calamares, ");
         }
         if (cebollaFresca.isSelected()) {
