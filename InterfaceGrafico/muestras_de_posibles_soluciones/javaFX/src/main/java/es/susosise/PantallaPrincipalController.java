@@ -11,6 +11,11 @@ public class PantallaPrincipalController {
     }
     
     @FXML
+    private void cargarPantallaBocatas() throws IOException {
+        App.setRoot("bocatas");
+    }
+    
+    @FXML
     private void cargarPantallaCalendario() throws IOException {
         App.setRoot("calendario");
     }
