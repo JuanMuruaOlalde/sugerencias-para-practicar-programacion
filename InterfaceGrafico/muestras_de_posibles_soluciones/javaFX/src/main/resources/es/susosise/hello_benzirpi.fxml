@@ -20,12 +20,10 @@
          </graphic>
          </Button>
    <HBox spacing="20.0" >
-      <children>
             <Label fx:id="lblNombre" text="Teclea un nombre: " />
             <TextField fx:id="txtNombre" />
             <Button fx:id="btnSaludar" text="Saludar" onAction="#saludar" />
             <Label fx:id="lblSaludo" text="" minWidth="100" />
-      </children>
    </HBox>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
