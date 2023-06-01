@@ -2,7 +2,6 @@
 
 Se trata de realizar una serie de pequeños programas para practicar con los controles más habituales en los interfaces gráficos.
 
-
 # Tareas a realizar
 
 ## Hello, Benzirpi.
@@ -55,9 +54,7 @@ Pedir una fecha mostrando un calendario.
 
 Presentar elementos con estructura jerárquica en árbol, navegar a través de ella mostrando u ocultando ramas, seleccionar algún elemento, y hacer algo con él (por ejemplo, mostrar información detallada de ese elemento concreto).
 
-
 ![pantallazo de como quedaria ejercicio SeleccionArborea](./imagenes/SeleccionArborea-pantallazo-Java.png)
-
 
 ## Barra de progreso
 
@@ -71,6 +68,13 @@ Una sugerencia de ejercicio para practicar:
 
 Una lectura interesante: [swingworker](https://www.oracle.com/technical-resources/articles/javase/swingworker.html)
 
+## Tabla de datos
+
+En las aplicaciones reales, aparecen muchas veces datos en formato tabular (filas y columnas). Cuando los vamos a ver/editar las filas una a una, se suele utilizar un formulario. Pero cuando necesitamos ver/editar varias filas a la vez, es necesario utilizar una tabla.
+
+Una sugerencia de ejercicio para practicar:
+
+![pantallazo de como quedaria ejercicio TablaDeDatos](./imagenes/TablaDeDatos-pantallazo-JavaFX.png)
 
 # Tareas extendidas (opcionales)
 
@@ -84,36 +88,35 @@ Ambos dos son aspectos muy importantes para cualquier software que no sea algo p
 
 Tanto la internacionalización como la localización son prácticamente imposibles de implementar ``a posteriori''. Es decir, han de ser incorporados desde el primer momento; desde la primera línea de código que se escriba.
 
-Merece la pena conocer y sentimos cómodos con los mecanismos que tenga nuestra plataforma para facilitar esos aspectos. Así los podremos utilizar en todos nuestros trabajos. 
+Merece la pena conocer y sentimos cómodos con los mecanismos que tenga nuestra plataforma para facilitar esos aspectos. Así los podremos utilizar en todos nuestros trabajos.
 
 Aunque al principio momento estemos pensando en un solo idioma y un solo país. Por un poco más de esfuerzo, si la plataforma dispone de ellos, merece poner en marcha esos mecanismos i18n y L10n. Así, si mas tarde se han de incorporar más idiomas o más países, el camino estará preparado.
 
-
 ## Ayudas y documentación
 
-Es importante conocer los mecanismos que tenga nuestra plataforma para mostrar documentación de forma dinámica: 
+Es importante conocer los mecanismos que tenga nuestra plataforma para mostrar documentación de forma dinámica:
 
-- Tooltips: indicaciones de ayuda al poner el ratón un tiempo quieto sobre un determinado elemento. 
+- Tooltips: indicaciones de ayuda al poner el ratón un tiempo quieto sobre un determinado elemento.
 
 - Ayuda, tecla F1: para mostrar un manual de uso.
 
-- Pop-ups: advertencias directas en algunos aspectos especialmente delicados. 
+- Pop-ups: advertencias directas en algunos aspectos especialmente delicados.
 
--  etc.
+- etc.
 
 Esta documentación dinámica es importante en programas de una cierta envergadura; programas que vayan a ser usados por muchas personas distintas, a lo largo de mucho tiempo.
 
 ### Algunas recomendaciones
 
-Creo que es mejor no incordiar mucho a los usuarios en su día a día. 
+Creo que es mejor no incordiar mucho a los usuarios en su día a día.
 
-- Los tooltips han de ser cortos y precisos, describiendo cláramente lo que hace cada parte del interface. Y han de aparecer solo si el usuario deja manifiestamente el ratón quieto durante unos 2 segundos o más sobre algo. 
+- Los tooltips han de ser cortos y precisos, describiendo cláramente lo que hace cada parte del interface. Y han de aparecer solo si el usuario deja manifiestamente el ratón quieto durante unos 2 segundos o más sobre algo.
 
 - El manual de usuario ha de ser accesible con facilidad. Habitualmente desde un menú o botón de 'Ayuda' bien visible desde cualquier punto del programa.
 
 - Los pop-ups se han de reservar para temas realmente peligrosos. Es contraproducente estar continuamente preguntando al usuario si "está seguro de...". Y, cuando se pregunta, hay que ofrecer toda la información relevante. Por ejemplo en lugar de preguntas genéricas de "¿Está seguro de borrar el expediente?", mejor detallar "¿Está seguro de BORRAR el expediente XXXX-YY-ZZZZ de xxxxxxx, referente a xxxxxxxxxxxxx?"
 
-Respecto al manual de usuario. Comentar que casi nadie suele leerlo, es verdad. Ni aún en el caso de que esté bien redactado, sea claro y sea ameno. Pero aún así, creo que merece la pena dotar a nuestros programas de una buena documentación de usuario. 
+Respecto al manual de usuario. Comentar que casi nadie suele leerlo, es verdad. Ni aún en el caso de que esté bien redactado, sea claro y sea ameno. Pero aún así, creo que merece la pena dotar a nuestros programas de una buena documentación de usuario.
 
 Al escribir un manual, suele ser conveniente enfocarlo como un curso de autoestudio. Un curso que explique la filosofia de funcionamiento del programa y los conceptos principales involucrados en su manejo. De tal manera que permita entender las pantallas y los flujos de trabajo al comenzar a trabajar.
 
@@ -121,9 +124,3 @@ Si, además, se le dota de un buen índice de temas. Ese manual podrá ser utili
 
 Lo que jamás de los jamases hay que hacer es escribir una mera recopilación de pantallas,... citando menú por menú y botón a botón,... solo por cumplir el expediente,...  
 ¡No merece la pena!. Además de resultar inútiles, ese tipo de manuales son los que dan tan mala fama a los manuales de usuario.
-
-
-
-
-
-

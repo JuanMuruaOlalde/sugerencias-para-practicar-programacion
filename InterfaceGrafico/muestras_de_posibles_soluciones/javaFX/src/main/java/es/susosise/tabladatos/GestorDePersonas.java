@@ -16,13 +16,21 @@ public class GestorDePersonas {
     public List<DatosPersona> getAlgunasPersonasParaPruebas() {
         ArrayList<DatosPersona> personas = new ArrayList<>();
 
-        DatosPersona unaPersona = crearUnaNueva("1111111111A", "Benzirpi", "Mirvento Sartinelli");
+        DatosPersona unaPersona = crearUnaNueva("123456789F", "Benzirpi", "Mirvento Sartinelli");
         unaPersona.setFechaDeNacimiento(LocalDate.of(1970, 11, 23));
         personas.add(unaPersona);
 
-        DatosPersona otraPersona = crearUnaNueva("222222222B", "Rigoberta", "Lirtine Waltztorrei");
+        DatosPersona otraPersona = crearUnaNueva("987654321K", "Rigoberta", "Lirtine Waltztorrei");
         otraPersona.setFechaDeNacimiento(LocalDate.of(1973, 4, 17));
         personas.add(otraPersona);
+
+        DatosPersona otramas = crearUnaNueva("192837465C", "Godofredo", "Riuwtz");
+        otramas.setFechaDeNacimiento(LocalDate.of(1982, 1, 13));
+        personas.add(otramas);
+
+        DatosPersona unacuarta = crearUnaNueva("918273645W", "Hatz", "Quevinet Valrt");
+        unacuarta.setFechaDeNacimiento(LocalDate.of(1977, 7, 17));
+        personas.add(unacuarta);
 
         return personas;
     }
