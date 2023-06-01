@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.susosise.tabladatos.TablaConDatosController">
+   <Button fx:id="btnVolverAPantallaPrincipal" onAction="#volverAPantallaPrincipal" style="-fx-background-image: url('@icons8-home-page-64.png');" >
+         <graphic>      
+            <ImageView>
+            <image>
+               <Image url="@images/icons8-home-page-25.png" />
+            </image>
+         </ImageView>
+         </graphic>
+         </Button>
+   <Label text="Pruebas con una tabla de datos" style="-fx-font: NORMAL 16 Arial" />
+   <Label fx:id="mensajes" />
+   <TableView fx:id="tablaPersonas">
+         <columns>
+            <TableColumn fx:id="columnaDNI" text="DNI"> 
+            </TableColumn>
+            <TableColumn fx:id="columnaNombre" text="Nombre"> 
+            </TableColumn>
+            <TableColumn fx:id="columnaApellidos" text="Apellidos" prefWidth="300"> 
+            </TableColumn>
+            <TableColumn fx:id="columnaFechaDeNacimiento" text="Fecha de nacimiento"> 
+            </TableColumn>
+         </columns>
+   </TableView>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

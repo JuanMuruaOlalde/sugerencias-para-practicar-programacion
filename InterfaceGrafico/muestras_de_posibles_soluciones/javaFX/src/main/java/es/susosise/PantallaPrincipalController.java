@@ -20,5 +20,10 @@ public class PantallaPrincipalController {
         App.setRoot("calendario");
     }
     
+    @FXML
+    private void cargarPantallaTablaConDatos() throws IOException {
+        App.setRoot("tabla_con_datos");
+    }
+    
 }
         
