@@ -4,7 +4,7 @@ Siempre es una buena idea estructurar el programa en diferentes capas especializ
 
 Una muestra de algunas de las distintas posibilidades para estructurar un programa en varias capas:
 
-![arquitecturas multicapa](.\imagenes\arquitecturas_multicapa.png)
+![arquitecturas multicapa](imagenes/arquitecturas_multicapa.png)
 
 El principal objetivo en cualquiera de estas arquitecturas multi-capa es desacoplar las capas entre sí.
 
@@ -38,21 +38,21 @@ La idea es utilizar el programilla tal cual, sin modificar el modelo (la funcion
 
 - Unos comandos tecleados desde la consola de línea de comandos.
 
-![imagen de interface de comandos](.\imagenes\Consola_pantallazo.png)
+![imagen de interface de comandos](imagenes/Consola_pantallazo.png)
 
 - Un diálogo textual en el que se pide al usuario teclear datos y opciones en la consola de línea de comandos.
 
 - Un interface gráfico, en una ventana donde poder interactuar con ratón y teclado.
 
-![imagen de interface grafico](.\imagenes\WindowsForms_pantallazo.png)
+![imagen de interface grafico](imagenes/WindowsForms_pantallazo.png)
 
 - Un interfaz API llamado a través de URLs.
 
-![imagen de interface API llamada por URL](.\imagenes\HttpGet_pantallazo.png)
+![imagen de interface API llamada por URL](imagenes/HttpGet_pantallazo.png)
 
 - Una página web que hace uso de esa API.
 
-![imagen de interface web](.\imagenes\HttpPut_web_pantallazo.png)
+![imagen de interface web](imagenes/HttpPut_web_pantallazo.png)
 
 # Tareas extendidas (opcionales)
 
