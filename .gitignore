@@ -2,10 +2,16 @@
 .settings/
 .classpath
 
+# VisualStudio Code
+.vscode/
+
 # Maven
 target/
 
 # Java
 *.class
 *.log
+
+# Python
+__pycache__/
 
