@@ -4,7 +4,7 @@ public class CuentaBancaria {
     
     private java.util.UUID codigoDeCuenta;
     private String titular;
-    Double saldo;
+    private Double saldo;
 
     public CuentaBancaria(String titular) {
         codigoDeCuenta = java.util.UUID.randomUUID();
@@ -34,10 +34,10 @@ public class CuentaBancaria {
 
     public void hacerReintegro(Double cantidad) {
         if (cantidad > 0) {
-            if (saldo > cantidad) {
+            if (saldo >= cantidad) {
                 saldo = saldo - cantidad;
             } else {
-                throw new IllegalArgumentException("El saldo es insuficiente para hacer este reintegro.");
+                throw new IllegalArgumentException("El saldo es insuficiente para hacer este reintegro de " + cantidad);
             }
         } else {
             throw new IllegalArgumentException("Se han de indicar siempre cantidades positivas.");
