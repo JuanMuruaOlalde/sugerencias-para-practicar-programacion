@@ -1,6 +1,7 @@
 package Objeto_java;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import Objeto_java.Donativo.Recurrencia;
 
@@ -12,7 +13,7 @@ import java.io.FileNotFoundException;
 public class Main {
     
     public static void main(String[] args) {
-        String ARCHIVO_A_LEER = "Donativos/subscripciones y donativos.csv";
+        String ARCHIVO_A_LEER = "subscripciones y donativos.csv";
         ArrayList<Donante> listaDeDonantes = new ArrayList<>();
         try{
             FileReader archivo = new FileReader(ARCHIVO_A_LEER);
@@ -59,7 +60,16 @@ public class Main {
                     break;
             }
         }
+        System.out.println();
         System.out.println("Contribuciones unicas: " + String.format("%.2f", totalUnicas));
+        System.out.println("  donadas por:");
+        ArrayList<Donante> donantesUnicos = 
+          (ArrayList<Donante>)listaDeDonantes.stream()
+            .filter(donante -> donante.getDonativo().getRecurrencia().equals(Recurrencia.unica))
+            .collect(Collectors.toList());
+        for (Donante donante : donantesUnicos) {
+            System.out.println("    " + donante.getNombre() + " (" + donante.getCorreo() + ")");
+        }
         System.out.println("Contribuciones mensuales: "+ String.format("%.2f", totalMensuales));
         System.out.println("Contribuciones anuales: "+ String.format("%.2f", totalAnuales));
 

@@ -31,11 +31,22 @@ Contribuciones mensuales: 32.00
 Contribuciones anuales: 100.00
 ```
 
+O haciendo una lista detallada:
+
+```
+Contribuciones unicas: 105.00
+  donadas por:  :  Bob (bob@example.com) :  Trudy (trudy@example.com)
+Contribuciones mensuales: 32.00
+  donadas por:  :  Alice (alice@example.com) :  Charlie (chlarlie@example.com) :  Eve (eve@example.com)
+Contribuciones anuales: 100.00
+  donadas por:  :  Mallory (mallory@example.com)
+```
+
 # Algunos aspectos sobre los que reflexionar
 
 ## ¿Cómo trabajar con los datos de varias personas?
 
-Por ejemplo si queremos poner todos los datos de todas las personas donantes en una lista. 
+Por ejemplo si queremos poner todos los datos de todas las personas donantes en una lista.
 O si queremos pasar o retornar los datos de una persona a o desde una función.
 
 Nos haria falta algún mecanismo para "agrupar" las variables relativas a cada persona.

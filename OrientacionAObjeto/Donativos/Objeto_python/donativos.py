@@ -3,7 +3,7 @@ import csv
 from Donante import Donante
 
 listaDeDonantes = []
-with open(os.path.relpath('Donativos/subscripciones y donativos.csv')) as archivo:
+with open(os.path.relpath('subscripciones y donativos.csv')) as archivo:
     lector = csv.reader(archivo, delimiter=',')
     next(lector)
     for lineaLeida in lector:
@@ -18,13 +18,28 @@ totalUnicas = 0.0
 totalMensuales = 0.0
 totalAnuales = 0.0
 for donante in listaDeDonantes:
-    donativo = donante.getDonativo()
-    if donativo['recurrencia'] == 'unica':
-        totalUnicas = totalUnicas + donativo['cantidad']
-    elif donativo['recurrencia'] == 'mensual':
-        totalMensuales = totalMensuales + donativo['cantidad']
-    elif donativo['recurrencia'] == 'anual':
-        totalAnuales = totalAnuales + donativo['cantidad']
+    if donante.getRecurrencia() == 'unica':
+        totalUnicas = totalUnicas + donante.getCantidad()
+    elif donante.getRecurrencia() == 'mensual':
+        totalMensuales = totalMensuales + donante.getCantidad()
+    elif donante.getRecurrencia() == 'anual':
+        totalAnuales = totalAnuales + donante.getCantidad()
+
+print()
 print(f"Contribuciones unicas: {totalUnicas:.2f}")
+print(f"  donadas por: ")
+donantesUnicos = filter((lambda donante: donante.getRecurrencia() == 'unica'), listaDeDonantes)
+for donante in donantesUnicos:
+    print(f"    {donante.getNombre()} ({donante.getCorreo()}) : ")
+print()
 print(f"Contribuciones mensuales: {totalMensuales:.2f}")
+print(f"  donadas por: ")
+donantesMensuales = filter((lambda donante: donante.getRecurrencia() == 'mensual'), listaDeDonantes)
+for donante in donantesMensuales:
+    print(f"    {donante.getNombre()} ({donante.getCorreo()}) : ")
+print()
 print(f"Contribuciones anuales: {totalAnuales:.2f}")
+print(f"  donadas por: ")
+donantesAnuales = filter((lambda donante: donante.getRecurrencia() == 'anual'), listaDeDonantes)
+for donante in donantesAnuales:
+    print(f"    {donante.getNombre()} ({donante.getCorreo()}) : ")

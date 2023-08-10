@@ -18,4 +18,13 @@ class Donante {
     public Donativo getDonativo() {
         return donativo;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
 }
