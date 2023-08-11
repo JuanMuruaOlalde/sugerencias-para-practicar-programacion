@@ -2,9 +2,9 @@
 
 Se trata de pasar unos datos a una función. Y que esta calcule y nos devuelva unos resultados.
 
-nota: El cálculo no tiene realmente sentido. No se corresponde con ningún cálculo real. Es simplemente para tener unas instrucciones a seguir.
+NOTA: El cálculo no tiene realmente sentido. No se corresponde con ningún cálculo real. Es simplemente para tener unas instrucciones a seguir.
 
-¡IMPORTANTE! Hacer primero el ejercicio con solo una unidad de medida para cada parámetro. Así nos evitamos conversiones. Pero, aún en ese caso, preparar alguna forma para que cada parámetro tenga asociada su correspondiente unidad de medida además de su valor.
+¡IMPORTANTE! ==> Primero se hará el ejercicio con una sola unidad de medida en cada parámetro. Así nos evitamos conversiones. Pero, aún en ese caso, tener preparada alguna forma para que cada parámetro tenga asociada su correspondiente unidad de medida además de su valor.
 
 ## Parámetros de entrada
 
