@@ -13,7 +13,13 @@ import java.io.FileNotFoundException;
 public class Main {
     
     public static void main(String[] args) {
-        String ARCHIVO_A_LEER = "subscripciones y donativos.csv";
+        ArrayList<Donante> datos = CargarDatosDeDonantesYDonaciones("subscripciones y donativos.csv");
+        ImprimirDonantes(datos);
+        ImprimirDonativos(datos);
+    }
+
+
+    private static ArrayList<Donante> CargarDatosDeDonantesYDonaciones(String ARCHIVO_A_LEER) {
         ArrayList<Donante> listaDeDonantes = new ArrayList<>();
         try{
             FileReader archivo = new FileReader(ARCHIVO_A_LEER);
@@ -38,11 +44,18 @@ public class Main {
         }catch(IOException ex) {
             System.out.println("El archivo " + ARCHIVO_A_LEER + " está vacio.");
         }
+        return listaDeDonantes;
+    }
 
+
+    private static void ImprimirDonantes(ArrayList<Donante> listaDeDonantes) {
         for(Donante donante : listaDeDonantes){
             System.out.println(donante);
         }
+    }
 
+
+    private static void ImprimirDonativos(ArrayList<Donante> listaDeDonantes) {
         Double totalUnicas = 0.0;
         Double totalMensuales = 0.0;
         Double totalAnuales = 0.0;
@@ -70,8 +83,26 @@ public class Main {
         for (Donante donante : donantesUnicos) {
             System.out.println("    " + donante.getNombre() + " (" + donante.getCorreo() + ")");
         }
+        System.out.println();
         System.out.println("Contribuciones mensuales: "+ String.format("%.2f", totalMensuales));
+        System.out.println("  donadas por:");
+        ArrayList<Donante> donantesMensuales = 
+          (ArrayList<Donante>)listaDeDonantes.stream()
+            .filter(donante -> donante.getDonativo().getRecurrencia().equals(Recurrencia.mensual))
+            .collect(Collectors.toList());
+        for (Donante donante : donantesMensuales) {
+            System.out.println("    " + donante.getNombre() + " (" + donante.getCorreo() + ")");
+        }
+        System.out.println();
         System.out.println("Contribuciones anuales: "+ String.format("%.2f", totalAnuales));
-
+        System.out.println("  donadas por:");
+        ArrayList<Donante> donantesAnuales = 
+          (ArrayList<Donante>)listaDeDonantes.stream()
+            .filter(donante -> donante.getDonativo().getRecurrencia().equals(Recurrencia.anual))
+            .collect(Collectors.toList());
+        for (Donante donante : donantesAnuales) {
+            System.out.println("    " + donante.getNombre() + " (" + donante.getCorreo() + ")");
+        }
     }
+
 }
