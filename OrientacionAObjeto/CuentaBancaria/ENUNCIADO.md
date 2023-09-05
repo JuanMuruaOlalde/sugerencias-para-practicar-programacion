@@ -31,6 +31,14 @@ Bob ha sacado 1.000 de su cuenta.
 Saldo de Alice [14000.0] . Saldo de Bob [2000.0]
 ```
 
+# Comentarios
+
+Para simplificar, un mismo titular solo puede tener una cuenta.
+
+Para evitar fraudes, las funciones solo admitirán cantidades positivas (no negativas ni ceros).
+
+Obviamente, no se puede sacar de una cuenta más dinero del que haya en ese momento.
+
 # Algunos aspectos sobre los que reflexionar
 
 ## ¿Qué pasa si cambia el nombre de un titular?
@@ -45,6 +53,6 @@ Por ejemplo, realizar también los siguientes pasos adicionales:
 
 5.  Charlie ingresa 9.000 en su cuenta.
 
-## ¿Qué pasa si queremos garantizar que nunca haya saldos negativos?
+## ¿Qué pasa si queremos garantizar que no pueda haber saldos negativos?
 
-Es decir, ¿cómo evitar que nadie programe operaciones "no previstas" tales como modificar directamente un saldo saltandose las comprobaciones en las funciones de ingresar() y sacar()?
+Es decir, ¿cómo evitar que nadie programe operaciones "no previstas" tales como modificar directamente un saldo saltandose las comprobaciones en las funciones de ingresar(), sacar() y transferir()?
