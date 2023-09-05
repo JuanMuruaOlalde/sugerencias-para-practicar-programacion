@@ -1,3 +1,10 @@
+## Notas a esta versión de posible solución
+
+Esta es una versión con "preguntas": antes de hacer una operación, se ha de preguntar a ver si es o no posible.
+
+Tiene la pega de que nos tenemos que preocupar nosotros mismos de preguntar. Si no lo hacemos y la operación resulta imposible, esta lanzará una excepción.
+
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
