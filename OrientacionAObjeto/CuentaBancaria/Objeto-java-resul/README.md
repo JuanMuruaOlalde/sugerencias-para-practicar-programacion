@@ -2,7 +2,7 @@
 
 Esta es una versión con "respuestas": las operaciones devuelven un codigo indicando el resultado.
 
-Luego se ha de comprobar dicho resultado para ver si la operación ha ido bien o no.
+Tiene la pega de que luego se ha de comprobar dicho resultado para ver si la operación ha ido bien o no.
 
 
 ## Getting Started

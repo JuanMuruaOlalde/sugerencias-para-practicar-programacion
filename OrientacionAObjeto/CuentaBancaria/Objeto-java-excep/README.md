@@ -2,13 +2,15 @@
 
 Esta es una versión con "excepciones": si se realiza una operación no-posible, esta lanza una excepción.
 
-**Aviso**: Es mala idea usar el tratamiento de excepciones como mecanismo de control de la lógica de la aplicación. El tratamiento de excepciones es para lo que es: para lidiar con situaciones excepcionales que no suceden habitualmente en el funcionamiento normal del programa.
+Se suele decir que es mala idea usar el tratamiento de excepciones como mecanismo de control de la lógica de la aplicación. El tratamiento de excepciones es para lo que es: para lidiar con situaciones excepcionales que no suceden habitualmente en el funcionamiento normal del programa.
 
-Otras (mejores) maneras de manejar la lógica de las operaciones no-posibles:
+Otras maneras de manejar la lógica de las operaciones no-posibles podrian ser:
 
 - Usar preguntas. Para saber si una operación va a ser o no va a ser posible. Antes de intentar realizarla.
 
 - Usar respuestas (retorno de estado). Para saber si la operación se ha podido llevar a cabo o no. Y, en caso de no, saber qué ha fallado.
+
+Pero estas otras maneras tienen la pega de que "obscurecen" el código de la aplicación, haciendolo más difícil de leer. (Todo en este mundo tiene sus pros y sus contras... ;-)
 
 
 ## Getting Started
