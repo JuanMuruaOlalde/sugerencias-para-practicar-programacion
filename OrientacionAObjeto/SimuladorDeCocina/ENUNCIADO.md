@@ -1,16 +1,18 @@
 # Tareas a realizar:
 
 Preparar una forma de almacenar recetas (en memoria):
- - Lista de ingredientes: nombre, cantidad, unidad de medida.
- - Lista de instrucciones, con simples descripciones de lo que hacer en cada paso.
+
+-   Lista de ingredientes: nombre, cantidad, unidad de medida.
+-   Lista de instrucciones, con simples descripciones de lo que hacer en cada paso.
 
 Alimentaremos la lista de ingredientes a una función "Comprar()". Que simplemente mostrará una frase resumiendo el ingrediente comprado.
 
 Alimentaremos la lista de instrucciones a una función "Cocinar()". Que simplemente irá mostrando la descripción de cada paso con un número de orden por delante.
 
 El resultado final prodria ser algo así como esto:
-````
-Procurando los INGREDIENTES...
+
+```
+COMPRANDO los INGREDIENTES...
 Marchando 500 gr de harina.
 Marchando 250 ml de agua.
 Marchando 5 gr de levadura seca de panadero.
@@ -27,7 +29,7 @@ COCINANDO...
 [8] ==> Poner la masa sobre una bandeja (o sobre rejilla con papel de horno). Hacerle unos cortes con una cuchilla de afeitar. Meterla al horno, durante unos 20 minutos.
 [9] ==> Dejar enfriar, sobre una rejilla, durante una media hora como mínimo.
 TERMINADO, ¡buen provecho!
-````
+```
 
 # Algunos aspectos sobre los que reflexionar
 
