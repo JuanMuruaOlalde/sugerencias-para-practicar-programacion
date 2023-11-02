@@ -24,13 +24,15 @@ Por ejemplo, si una función espera una temperatura y otra función espera un pr
 
 Los objetos permiten controlar la forma de utilizar y de modificar la información que contienen.
 
-Una propiedad puede definirse como privada. Para impedir que pueda ser manipulada directamente (con objeto.propiedad). Obligando a que su manipulación esté controlada:
+Una propiedad puede definirse como privada. Para impedir que pueda ser manipulada directamente (con *objeto.propiedad*). Obligando a que su manipulación esté controlada:
 
 - Para valores inmutables o para inicializar valores => se puede obligar a introducirlos a través de un constructor.
 - Para recuperar valores => se pueden habilitar getters.
 - Para modificar variables => se pueden habilitar setters.
 
-nota: No merece la pena hacer privada una propiedad si luego se le va a poner automaticamente un getter y un setter. Salvo que ese getter o ese setter hagan algo más que simplemente devolver o asignar valores directamente.
+nota: No merece la pena hacer privada una propiedad si luego se le va a poner automaticamente un getter y un setter que se limitan simplemente a devolver y asignar valores directamente. Es más fácil de usar si es pública.
+
+nota: Muchos lenguajes modernos contemplan mecanismos para aunar el control que dan los *getters/setters* con la facilidad de uso de *objeto.propiedad*.
 
 ## Objetos como “protectores del comportamiento”: métodos
 
@@ -49,13 +51,13 @@ Utilizando objetos "abstractos", se puede definir y obligar a cumplir un determi
 
 - Objetos implementadores, en caso de utilizar *'Interface'*.
 
-La Herencia casi no se suele utilizar en los programas habituales. Prácticamente solo se utiliza dentro de algunas bibliotecas especializadas o de algunos marcos de trabajo (frameworks).
+La Herencia casi no se suele utilizar en los programas habituales. Prácticamente solo suele aparecer dentro de algunas bibliotecas especializadas o de algunos marcos de trabajo (frameworks).
 
 Los Interfaces son de amplia utilización en los programas habituales.
 
 Definiendo interfaces, quedan claras las dependencias y se evitan problemas por cambios disrruptivos en un objeto (en una parte del programa) que se utiliza por otros (en otras partes del programa). Si una parte cuenta con que la otra parte cumpla un cierto interfaz, queda claro qué es lo que se ha de cuidar al realizar modificaciones.
 
-nota: En los últimos tiempos, este papel lo desempeñan también las APIs (Application Programming Interface).
+nota: En los últimos tiempos, este papel de "garantizar contratos" lo desempeñan también las APIs (Application Programming Interface).
 
 ## Recapitulación
 
