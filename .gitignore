@@ -3,7 +3,6 @@ bin/
 
 # Eclipse
 .settings/
-.classpath
 
 # VisualStudio Code
 .vscode/
