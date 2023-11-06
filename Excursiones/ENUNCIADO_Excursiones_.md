@@ -2,7 +2,7 @@
 
 Se trata de realizar un programa que permita a alguien (a una persona encargada dentro del club o asociación):
 
-- Gestionar (altas/bajas/modificaciones) excursiones . Con estos datos: tipoDeExcursion, descripción, fecha, hora, poblacionOrigen, poblacionDestino, coste.
+- Gestionar (altas/bajas/modificaciones) excursiones . Con estos datos: tipoDeExcursion, descripción, fecha, hora, poblacionOrigen, lugarDePartida, poblacionDestino, coste.
 
   nota: los tipos de excursión se clasificarán según la actividad principal que se vaya a hacer: VisitaHistorica, ConciertoMusical, ActuacionTeatral, RutaNatural,...
 
