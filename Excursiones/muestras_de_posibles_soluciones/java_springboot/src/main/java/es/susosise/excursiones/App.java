@@ -32,8 +32,8 @@ public class App {
 	    return args -> {
 	        credenciales.crearCredencialesParaPruebas();
 	        poblaciones.crearPoblacionesParaPruebas();
-	        personas.crearPersonasParaPruebas(poblaciones);
-	        //excursiones.crearExcursionesParaPruebas(personas);
+	        personas.crearPersonaParaPruebas(poblaciones);
+	        excursiones.crearExcursionParaPruebas(poblaciones);
 	    };
 	}
 

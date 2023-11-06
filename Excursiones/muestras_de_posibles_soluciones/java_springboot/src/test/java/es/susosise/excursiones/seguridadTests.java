@@ -1,15 +1,17 @@
 package es.susosise.excursiones;
 
 import org.junit.jupiter.api.Test;
-
-import es.susosise.excursiones.seguridad.Credencial;
-import es.susosise.excursiones.seguridad.DataMapperDeCredenciales.Rol;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class CredencialTests {
+import es.susosise.excursiones.seguridad.Credencial;
+import es.susosise.excursiones.seguridad.DataMapperDeCredenciales.Rol;
+
+@SpringBootTest
+public class seguridadTests {
     
     @Test
     void sePuedenAsignarRolesAUnaCredencial() {

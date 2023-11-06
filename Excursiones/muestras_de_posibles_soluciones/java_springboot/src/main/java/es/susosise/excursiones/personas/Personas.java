@@ -2,6 +2,7 @@ package es.susosise.excursiones.personas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,16 +52,16 @@ public class Personas {
     }
  
     
-    public List<Persona> getPersonasParaPruebas() {
-        ArrayList<Persona> personasParaPruebas = new ArrayList<>();
-        Optional<Persona> persona01 = buscarPorNombreYApellidos("nombrePruebas01", "apellidosPruebas01");
-        if (persona01.isPresent()) {
-            personasParaPruebas.add(persona01.get());
+    public Persona getPersonaParaPruebas() {
+        Optional<Persona> persona = buscarPorNombreYApellidos("nombrePruebas01", "apellidosPruebas01");
+        if (persona.isPresent()) {
+            return persona.get();
+        }else {
+            throw new NoSuchElementException("El cliente de pruebas no está registrado en la base de datos.");
         }
-        return personasParaPruebas;
     }
     
-    public void crearPersonasParaPruebas(Poblaciones poblaciones) {
+    public void crearPersonaParaPruebas(Poblaciones poblaciones) {
         if(buscarPorNombreYApellidos("nombrePruebas01", "apellidosPruebas01").isEmpty()) {
             Persona persona = new Persona();
             persona.setNombre("nombrePruebas01");
@@ -70,7 +71,6 @@ public class Personas {
             persona.setTelefono("999-99-99-99");
             guardar(persona);
         }
-        //TODO pendiente añadir mas personas para pruebas
     }
    
 

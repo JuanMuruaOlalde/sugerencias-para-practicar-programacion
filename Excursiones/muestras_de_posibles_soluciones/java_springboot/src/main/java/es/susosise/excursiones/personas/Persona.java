@@ -42,12 +42,7 @@ public class Persona {
 	
 	private ArrayList<Excursion.TipoDeExcursion> preferenciasParaExcursiones;
 
-	@ManyToMany
-	@JoinTable(
-	        name = "persona_excursion",
-	        joinColumns = { @JoinColumn(name="persona_id") },
-	        inverseJoinColumns = { @JoinColumn(name="excursion_id") }
-	)
+	@ManyToMany(mappedBy="participantes")
 	private Set<Excursion> excursiones;
 
 

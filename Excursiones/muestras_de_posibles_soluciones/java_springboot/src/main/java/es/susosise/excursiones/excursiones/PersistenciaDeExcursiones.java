@@ -12,5 +12,6 @@ public interface PersistenciaDeExcursiones extends JpaRepository<Excursion, Long
 
     //Estas son funciones añadidas por nosotros, pero que Spring Boot también se encarga de implementar automáticamente.
     // (https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
+    Optional<Excursion> findByDescripcionContaining(String descripcion);
     
 }

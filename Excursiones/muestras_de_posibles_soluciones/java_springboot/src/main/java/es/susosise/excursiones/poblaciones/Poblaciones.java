@@ -71,6 +71,7 @@ public class Poblaciones {
     public void crearPoblacionesParaPruebas() {
         if(buscarPorNombre("poblacionPruebas01").isEmpty()) {
             Poblacion poblacion = new Poblacion();
+            poblacion.setIdInterno(Long.MAX_VALUE);
             poblacion.setNombre("poblacionPruebas01");
             poblacion.setCodigoPostal("99999");
             poblacion.setCantidadDeHabitantes(99);
