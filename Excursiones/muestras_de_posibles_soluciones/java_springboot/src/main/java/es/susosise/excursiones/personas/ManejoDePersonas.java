@@ -8,11 +8,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.susosise.excursiones.poblaciones.Poblaciones;
+import es.susosise.excursiones.excursiones.Excursion.TipoDeExcursion;
+import es.susosise.excursiones.poblaciones.ManejoDePoblaciones;
 
 
 @Service
-public class Personas {
+public class ManejoDePersonas {
     
     @Autowired
     private PersistenciaDePersonas persistencia;
@@ -43,6 +44,8 @@ public class Personas {
         if (!persona.getNombre().isBlank() 
             && !persona.getApellidos().isBlank()) {
             persistencia.save(persona);
+        } else {
+            throw new IllegalArgumentException("El nombre y apellidos no pueden estar en blanco.");
         }
     }
     
@@ -61,7 +64,7 @@ public class Personas {
         }
     }
     
-    public void crearPersonaParaPruebas(Poblaciones poblaciones) {
+    public void crearPersonaParaPruebas(ManejoDePoblaciones poblaciones) {
         if(buscarPorNombreYApellidos("nombrePruebas01", "apellidosPruebas01").isEmpty()) {
             Persona persona = new Persona();
             persona.setNombre("nombrePruebas01");
@@ -69,6 +72,9 @@ public class Personas {
             persona.setDni_cedula_pasaporte_o_similar("documentoPruebas01");
             persona.setPoblacion(poblaciones.getPoblacionParaPruebas());
             persona.setTelefono("999-99-99-99");
+            persona.setEmail("pruebas01@proveedordecorreo.es");
+            persona.añadirPreferencia(TipoDeExcursion.RUTA_NATURAL);
+            persona.añadirPreferencia(TipoDeExcursion.VISITA_HISTORICA);
             guardar(persona);
         }
     }

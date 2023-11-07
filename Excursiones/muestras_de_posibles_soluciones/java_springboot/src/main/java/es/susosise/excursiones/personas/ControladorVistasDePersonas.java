@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import es.susosise.excursiones.poblaciones.Poblaciones;
+import es.susosise.excursiones.poblaciones.ManejoDePoblaciones;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -17,10 +17,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class ControladorVistasDePersonas {
     
     @Autowired
-    private Personas personas;
+    private ManejoDePersonas personas;
     
     @Autowired
-    private Poblaciones poblaciones;
+    private ManejoDePoblaciones poblaciones;
     
 
     @GetMapping("/personas")

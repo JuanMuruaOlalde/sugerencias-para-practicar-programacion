@@ -17,18 +17,14 @@ public class Poblacion {
 
     private String nombre;
     private String codigoPostal;
-    private Integer cantidadDeHabitantes;
-
     
     public Poblacion() {
-        
     }
 
-    public Poblacion(Long idInterno, String nombre, String codigoPostal, Integer cantidadDeHabitantes) {
+    public Poblacion(Long idInterno, String nombre, String codigoPostal) {
         this.idInterno = idInterno;
         this.nombre = nombre;
         this.codigoPostal = codigoPostal;
-        this.cantidadDeHabitantes = cantidadDeHabitantes;
     }
 
     public Long getIdInterno() {
@@ -55,14 +51,6 @@ public class Poblacion {
         this.codigoPostal = codigoPostal;
     }
 
-    public Integer getCantidadDeHabitantes() {
-        return cantidadDeHabitantes;
-    }
-
-    public void setCantidadDeHabitantes(Integer cantidadDeHabitantes) {
-        this.cantidadDeHabitantes = cantidadDeHabitantes;
-    }
-    
-    
+       
 
 }

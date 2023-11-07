@@ -50,6 +50,10 @@ public class Persona {
 		preferenciasParaExcursiones = new ArrayList<>();
 		excursiones = new HashSet<>();
 	}
+
+	public void añadirPreferencia(Excursion.TipoDeExcursion tipo){
+		preferenciasParaExcursiones.add(tipo);
+	}
 	
 	public Persona(Long idInterno, String dni_cedula_pasaporte_o_similar, String nombre, String apellidos,
 			Poblacion poblacion, String email, String telefono, ArrayList<TipoDeExcursion> preferenciasParaExcursiones,

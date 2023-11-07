@@ -16,7 +16,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 public class ControladorVistasDePoblaciones {
     
     @Autowired
-    private Poblaciones poblaciones;
+    private ManejoDePoblaciones poblaciones;
     
 
     @GetMapping("/poblaciones")

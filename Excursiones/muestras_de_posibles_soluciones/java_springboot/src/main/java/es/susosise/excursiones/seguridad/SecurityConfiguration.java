@@ -44,7 +44,7 @@ public class SecurityConfiguration {
     protected static class AuthenticationSecurity extends GlobalAuthenticationConfigurerAdapter {
         
         @Autowired
-        private Credenciales credenciales;
+        private ManejoDeCredenciales credenciales;
         
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {

@@ -22,9 +22,9 @@ import java.util.Optional;
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private Credenciales credenciales;
+    private ManejoDeCredenciales credenciales;
     
-    public MyUserDetailsService(Credenciales credenciales) {
+    public MyUserDetailsService(ManejoDeCredenciales credenciales) {
         this.credenciales = credenciales;
     }
 

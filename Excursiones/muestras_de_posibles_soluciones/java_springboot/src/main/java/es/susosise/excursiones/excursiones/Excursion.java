@@ -1,5 +1,6 @@
 package es.susosise.excursiones.excursiones;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -64,6 +65,7 @@ public class Excursion {
     }
 
     public Excursion() {
+        participantes = new HashSet<>();
     }
 
 

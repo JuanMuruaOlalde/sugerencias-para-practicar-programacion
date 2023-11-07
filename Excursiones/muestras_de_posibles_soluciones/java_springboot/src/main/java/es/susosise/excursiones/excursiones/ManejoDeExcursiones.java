@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import es.susosise.excursiones.personas.Persona;
-import es.susosise.excursiones.poblaciones.Poblaciones;
+import es.susosise.excursiones.poblaciones.ManejoDePoblaciones;
 
 @Service
-public class Excursiones {
+public class ManejoDeExcursiones {
     
     @Autowired
     private PersistenciaDeExcursiones persistencia;
@@ -23,9 +23,16 @@ public class Excursiones {
     }
 
    
+    //@Secured({"ROLE_CURRELA, ROLE_ADMINISTRADOR"})
     public void guardar(Excursion excursion) {
         persistencia.save(excursion);
     }
+
+    //@Secured({"ROLE_CURRELA, ROLE_ADMINISTRADOR"})
+    public void eliminar(Excursion excursion) {
+        persistencia.delete(excursion);
+    }
+
 
 
     public Excursion getExcursionParaPruebas() {
@@ -37,7 +44,7 @@ public class Excursiones {
         } 
     }   
     
-    public void crearExcursionParaPruebas(Poblaciones poblaciones) {
+    public void crearExcursionParaPruebas(ManejoDePoblaciones poblaciones) {
         if(persistencia.findByDescripcionContaining("Excursión para pruebas").isEmpty()) {
             Excursion excursion = new Excursion();
             excursion.setDescripcion("Excursión para pruebas. Un idílico recorrido por los prados que bordean el rio Drwasf, con merienda sobre el cesped en la ermita de Santa Dewos.");

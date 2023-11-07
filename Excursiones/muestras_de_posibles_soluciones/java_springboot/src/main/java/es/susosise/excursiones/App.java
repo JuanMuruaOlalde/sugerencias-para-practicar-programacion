@@ -7,10 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
-import es.susosise.excursiones.excursiones.Excursiones;
-import es.susosise.excursiones.personas.Personas;
-import es.susosise.excursiones.poblaciones.Poblaciones;
-import es.susosise.excursiones.seguridad.Credenciales;
+import es.susosise.excursiones.excursiones.ManejoDeExcursiones;
+import es.susosise.excursiones.personas.ManejoDePersonas;
+import es.susosise.excursiones.poblaciones.ManejoDePoblaciones;
+import es.susosise.excursiones.seguridad.ManejoDeCredenciales;
 
 
 @SpringBootApplication
@@ -25,10 +25,10 @@ public class App {
 	
 	@Bean
 	public CommandLineRunner llenarLaBaseDeDatosConLosDatosDePrueba(
-	        Credenciales credenciales, 
-	        Poblaciones poblaciones,
-	        Personas personas,
-	        Excursiones excursiones) {
+	        ManejoDeCredenciales credenciales, 
+	        ManejoDePoblaciones poblaciones,
+	        ManejoDePersonas personas,
+	        ManejoDeExcursiones excursiones) {
 	    return args -> {
 	        credenciales.crearCredencialesParaPruebas();
 	        poblaciones.crearPoblacionesParaPruebas();

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ControladorVistasDeSeguridad {
     
     @Autowired
-    private Credenciales credenciales;
+    private ManejoDeCredenciales credenciales;
     
     private Long idCredencialEnCurso;
     

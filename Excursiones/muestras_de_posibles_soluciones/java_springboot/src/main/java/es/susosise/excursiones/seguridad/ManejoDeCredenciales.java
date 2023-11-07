@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import es.susosise.excursiones.seguridad.DataMapperDeCredenciales.Rol;
 
 @Service
-public class Credenciales {
+public class ManejoDeCredenciales {
 
     @Autowired
     private PersistenciaDeCredenciales persistencia;
     
-    public Credenciales(PersistenciaDeCredenciales persistencia) {
+    public ManejoDeCredenciales(PersistenciaDeCredenciales persistencia) {
         this.persistencia = persistencia;
     }
     

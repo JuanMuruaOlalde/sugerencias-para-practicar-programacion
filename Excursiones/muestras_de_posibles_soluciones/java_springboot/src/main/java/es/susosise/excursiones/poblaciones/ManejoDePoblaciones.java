@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Poblaciones {
+public class ManejoDePoblaciones {
 
     @Autowired
     PersistenciaDePoblaciones persistencia;
     
-    public Poblaciones(PersistenciaDePoblaciones persistencia) {
+    public ManejoDePoblaciones(PersistenciaDePoblaciones persistencia) {
         this.persistencia = persistencia;
     }
     
@@ -71,10 +71,8 @@ public class Poblaciones {
     public void crearPoblacionesParaPruebas() {
         if(buscarPorNombre("poblacionPruebas01").isEmpty()) {
             Poblacion poblacion = new Poblacion();
-            poblacion.setIdInterno(Long.MAX_VALUE);
             poblacion.setNombre("poblacionPruebas01");
             poblacion.setCodigoPostal("99999");
-            poblacion.setCantidadDeHabitantes(99);
             guardar(poblacion);
         }
     }
