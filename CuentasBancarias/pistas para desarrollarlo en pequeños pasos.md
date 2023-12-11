@@ -10,6 +10,7 @@ Se entiende por terminada:
 
 - Encaja adecuadamente en la arquitectura general de la aplicación.
 
+Un posible ejemplo de lo que podria entenderse por pequeño paso. Una posible división en funcionalidades. Podrian ser cada uno de los bolo-guión en las listas que se muestran a continuación.
 
 ## El banco tiene cuentas
 
