@@ -1,5 +1,7 @@
 package cuentas_bancarias;
 
+import java.util.HashMap;
+
 public class Banco {
 
     private  Integer contadorDeNumeroDeCuenta;
@@ -7,13 +9,15 @@ public class Banco {
     java.util.ArrayList<MovimientoEnCuentas> movimientos;
 
     private java.util.HashMap<String, Cliente> clientes;
-    //TODO -pendiente- ¿como relacionar clientes y cuentas?
+    private java.util.HashMap<String, java.util.ArrayList<Cliente>> cuentasYclientes;
+
 
     public Banco() {
         contadorDeNumeroDeCuenta = 0;
         cuentas = new java.util.HashMap<>();
         movimientos = new java.util.ArrayList<>();
         clientes = new java.util.HashMap<>();
+        cuentasYclientes = new HashMap<>();
     }
 
     public Cuenta crearUnaNuevaCuenta() {
@@ -71,9 +75,27 @@ public class Banco {
         }
     }
 
-    public Cliente getCliente(String DNIDelClienteABuscar)
+    public Cliente getCliente(String dniDelCliente)
     {
-        return clientes.get(DNIDelClienteABuscar);
+        return clientes.get(dniDelCliente);
+    }
+
+    public java.util.ArrayList<Cliente> getClientesTitularesDeLaCuenta(String numeroDeCuenta) {
+        java.util.ArrayList<Cliente> titulares = cuentasYclientes.get(numeroDeCuenta);
+        if (titulares != null) {
+            return titulares;
+        } else {
+            return new java.util.ArrayList<Cliente>();
+        }
+    }
+
+    public void asignarUnTitularAUnaCuenta(String dniDelTitular, String numeroDeCuenta) {
+        java.util.ArrayList<Cliente> titulares = cuentasYclientes.get(numeroDeCuenta);
+        if (titulares == null) {
+            titulares = new java.util.ArrayList<Cliente>();
+            cuentasYclientes.put(numeroDeCuenta, titulares);
+        }
+        titulares.add(getCliente(dniDelTitular));
     }
 
  
