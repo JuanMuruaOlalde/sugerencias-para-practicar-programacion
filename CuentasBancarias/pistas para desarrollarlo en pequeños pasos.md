@@ -14,13 +14,11 @@ Un posible ejemplo de lo que podria entenderse por pequeño paso. Una posible di
 
 ## El banco tiene cuentas
 
-- Se puede dar de alta una cuenta.
+- Se puede dar de alta una cuenta. Las cuentas se crean con saldo cero.
 
-- Cada cuenta tiene un número de cuenta único. No hay números de cuenta duplicados.
+- Cada cuenta tiene un número de cuenta único. No puede haber números de cuenta duplicados.
 
-- Se puede encontrar una cuenta existente.
-
-- En caso de que no encontrar una cuenta con los datos de busqueda suministrados, avisar de que no existe.
+- Se puede encontrar una cuenta existente, buscandola por número de cuenta.
 
 ## Se realizan movimientos monetarios con las cuentas
 
@@ -36,9 +34,11 @@ Un posible ejemplo de lo que podria entenderse por pequeño paso. Una posible di
 
 - Se puede dar de alta un cliente.
 
-- Se puede encontrar un cliente existente.
+- Se puede encontrar un cliente existente, buscandolo por su DNI.
 
 - Se puede asignar una cuenta a un cliente.
+
+- Se pueden encontrar los clientes titulares de una cuenta.
 
 - Se pueden encontrar las cuentas de las cuales un cliente es titular.
 
