@@ -5,39 +5,22 @@ import java.util.HashMap;
 
 public class GestorDeExcursiones {
 
-    ContadoresParaIDs contadores;
-
-    HashMap<String, Poblacion> poblaciones;
     HashMap<String, Persona> personas;
-    HashMap<String, Excursion> excursiones;
+    ArrayList<Excursion> excursiones;
 
     public GestorDeExcursiones() {
-        contadores = new ContadoresParaIDs();
-        poblaciones = new HashMap<>();
         personas = new HashMap<>();
-        excursiones = new HashMap<>();
+        excursiones = new ArrayList<>();
     }
 
-    public void añadirPoblacion(Poblacion poblacion) {
-        poblaciones.put(poblacion.getCodigoPostal(), poblacion);
-    }
-
-    public ArrayList<Poblacion> getTodasLasPoblaciones() {
-        ArrayList<Poblacion> todasLasPoblaciones = new ArrayList<>();
-        for(Poblacion poblacion : poblaciones.values()) {
-            todasLasPoblaciones.add(poblacion);
-        }
-        return todasLasPoblaciones;
-    }
 
 
     public String añadirPersona(Persona persona) {
-        persona.setIdInterno(contadores.getSiguienteIdParaPersona());
         if (personas.containsKey(persona.getDni_cedula_pasaporte_o_similar())) {
-            return "Ya existe una persona con ese DNI";
+            return "Ya existe una persona con ese DNI.";
         } else {
             personas.put(persona.getDni_cedula_pasaporte_o_similar(), persona);
-            return persona.getIdInterno();
+            return "Se ha añadido la pesona.";
         }
     }
 
@@ -49,10 +32,8 @@ public class GestorDeExcursiones {
         return todasLasPersonas;
     }
 
-    public String añadirExcursion(Excursion excursion) {
-        excursion.setIdInterno(contadores.getSiguienteIdParaExcursion());
-        excursiones.put(excursion.getIdInterno(), excursion);
-        return excursion.getIdInterno();
+    public void añadirExcursion(Excursion excursion) {
+        excursiones.add(excursion);
     }
     
 }
