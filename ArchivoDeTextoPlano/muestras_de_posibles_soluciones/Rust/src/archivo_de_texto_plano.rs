@@ -30,15 +30,16 @@ impl fmt::Display for Persona {
     }
 }
 
-pub fn leer_datos_del_archivo<T: AsRef<Path>>(path_archivo: T) -> Vec<Persona> {
+pub fn leer_datos_del_archivo<T: AsRef<Path>>(path_archivo: T) -> (Vec<Persona>, Vec<String>) {
     let mut personas: Vec<Persona> = Vec::new();
+    let mut log: Vec<String> = Vec::new();
     match fs::File::open(path_archivo.as_ref()) {
         Err(error) => {
-            println!(
+            log.push(format!(
                 "ERROR al abrir el archivo {}: {}",
                 path_archivo.as_ref().display(),
-                error
-            );
+                error,
+            ));
         }
         Ok(archivo) => {
             let lector = BufReader::new(archivo);
@@ -49,14 +50,17 @@ pub fn leer_datos_del_archivo<T: AsRef<Path>>(path_archivo: T) -> Vec<Persona> {
                     }
                     Ok(linea) => match num_linea {
                         0 => {
-                            println!("==============================================================================");
-                            println!("Se ignora la primera linea de cabecera:");
-                            println!("{}", linea);
-                            println!("==============================================================================");
+                            log.push(format!(
+                                "--------\nSe ignora la primera linea de cabecera.\n{}\n--------",
+                                linea
+                            ));
                         }
                         _ => match procesar_linea(&linea) {
                             Err(error) => {
-                                println!("ERROR al procesar la linea [{}]: {}", num_linea, error);
+                                log.push(format!(
+                                    "ERROR al procesar la linea [{}]: {}",
+                                    num_linea, error
+                                ));
                             }
                             Ok(persona) => {
                                 personas.push(persona);
@@ -67,7 +71,7 @@ pub fn leer_datos_del_archivo<T: AsRef<Path>>(path_archivo: T) -> Vec<Persona> {
             }
         }
     }
-    personas
+    (personas, log)
 }
 
 fn procesar_linea(linea: &str) -> Result<Persona, String> {
@@ -132,10 +136,11 @@ fn procesar_linea(linea: &str) -> Result<Persona, String> {
 
 #[cfg(test)]
 #[test]
-fn devuelve_una_lista_vacia_si_no_puede_abrir_el_archivo_a_leer() {
+fn devuelve_una_lista_de_personas_vacia_si_no_puede_abrir_el_archivo_a_leer() {
     let path_archivo = "./resources/archivo_que_no_existe.txt";
-    let resultado = leer_datos_del_archivo(path_archivo);
-    assert!(resultado.len() == 0);
+    let (personas, log) = leer_datos_del_archivo(path_archivo);
+    assert!(personas.len() == 0);
+    assert!(log.len() > 0);
 }
 #[test]
 fn avisa_si_una_linea_tiene_menos_de_6_campos() {
@@ -150,8 +155,11 @@ fn avisa_si_una_linea_tiene_mas_de_6_campos() {
     assert!(resultado.is_err());
 }
 #[test]
-fn avisa_si_una_linea_esta_vacia() {
+fn avisa_si_una_linea_no_tiene_campos() {
     let linea = "";
+    let resultado = procesar_linea(linea);
+    assert!(resultado.is_err());
+    let linea = "Benzirpi;Mirvento;01/01/2000;70;170;01/01/2020";
     let resultado = procesar_linea(linea);
     assert!(resultado.is_err());
 }
