@@ -2,6 +2,8 @@ use eframe::egui;
 
 mod hello_benzirpi;
 use crate::hello_benzirpi::HelloBenzirpi;
+mod bocatas;
+use crate::bocatas::MyBocata;
 
 fn main() -> eframe::Result<()> {
     let opciones = eframe::NativeOptions {
@@ -11,8 +13,8 @@ fn main() -> eframe::Result<()> {
         ..eframe::NativeOptions::default()
     };
     eframe::run_native(
-        HelloBenzirpi::name(),
+        MyBocata::titulo_ventana(),
         opciones,
-        Box::new(|_cc| Ok(Box::<HelloBenzirpi>::default())),
+        Box::new(|_cc| Ok(Box::<MyBocata>::default())),
     )
 }

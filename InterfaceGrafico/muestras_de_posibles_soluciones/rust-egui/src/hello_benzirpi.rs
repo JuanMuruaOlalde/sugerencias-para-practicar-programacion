@@ -7,7 +7,7 @@ pub struct HelloBenzirpi {
 }
 
 impl HelloBenzirpi {
-    pub fn name() -> &'static str {
+    pub fn titulo_ventana() -> &'static str {
         "Hello..."
     }
 }
