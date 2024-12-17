@@ -45,7 +45,7 @@ fn mostrar_situacion(este_edificio: &Edificio) {
         "El edificio tiene {} ascensores:",
         este_edificio.get_cuantos_ascensores_tiene()
     );
-    for (num_ascensor, ascensor) in este_edificio.get_ascensores() {
+    for (num_ascensor, ascensor) in este_edificio.get_iter_for_ascensores() {
         println!(
             "  -{num_ascensor}- está en el piso {}",
             ascensor.get_piso_en_el_que_esta()

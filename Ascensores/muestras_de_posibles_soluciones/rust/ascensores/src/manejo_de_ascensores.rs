@@ -27,7 +27,7 @@ impl Edificio {
         self.ascensores.len()
     }
 
-    pub fn get_ascensores<'a>(&'a self) -> impl Iterator<Item = (&i8, &Ascensor)> + 'a {
+    pub fn get_iter_for_ascensores(&self) -> std::collections::hash_map::Iter<'_, i8, Ascensor> {
         self.ascensores.iter()
     }
 
@@ -110,14 +110,14 @@ mod test {
     }
 
     #[test]
-    fn no_se_puede_utilizar_un_ascensor_que_no_exista() {
+    fn no_se_puede_utilizar_un_ascensor_que_no_exista_en_el_edificio() {
         let mut edificio = preparar_un_edificio_de_pruebas();
         let resultado = edificio.pulsar_boton_dentro_del_ascensor(5, 2);
         assert!(resultado.is_err());
     }
 
     #[test]
-    fn no_se_puede_ir_a_un_piso_que_no_exista() {
+    fn no_se_puede_ir_a_un_piso_que_no_exista_en_el_edificio() {
         let mut edificio = preparar_un_edificio_de_pruebas();
         let resultado = edificio.pulsar_llamada_del_piso(-8);
         assert!(resultado.is_err());
@@ -130,7 +130,7 @@ mod test {
     }
 
     #[test]
-    fn pulsar_tecla_de_llamada_trae_algun_ascensor_a_este_piso() {
+    fn pulsar_tecla_de_llamada_en_un_piso_trae_algun_ascensor_a_ese_piso() {
         let mut edificio = preparar_un_edificio_de_pruebas();
         let _ = edificio.pulsar_llamada_del_piso(3);
         for (_num_ascensor, ascensor) in edificio.ascensores {
@@ -143,7 +143,7 @@ mod test {
     }
 
     #[test]
-    fn pulsar_tecla_de_llamada_trae_el_ascensor_mas_cercano_a_este_piso() {
+    fn pulsar_tecla_de_llamada_en_un_piso_trae_el_ascensor_mas_cercano_a_ese_piso() {
         let mut edificio = preparar_un_edificio_de_pruebas();
 
         let _ = edificio.pulsar_boton_dentro_del_ascensor(1, -2);
