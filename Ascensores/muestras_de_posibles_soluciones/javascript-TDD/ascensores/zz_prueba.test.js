@@ -1,4 +1,4 @@
-import { estaFuncionDePruebasLanzaUnaExcepcion } from "./index.js";
+import { estaFuncionDePruebasLanzaUnaExcepcion } from "./zz_prueba.js";
 
 test("este test pasa", () => {
     expect(true).toBeTruthy();

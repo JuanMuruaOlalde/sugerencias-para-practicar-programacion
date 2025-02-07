@@ -1,4 +1,4 @@
-import { crearUnAscensor } from "./ascensor";
+import { crearUnAscensor } from "./ascensor.js";
 
 function crearEdificio({
     piso_mas_bajo,
@@ -30,6 +30,7 @@ function crearEdificio({
             } catch (error) {
                 console.error(error);
             }
+            return ascensor_mas_cercano + 1;
         },
         getPosicionesDeLosAscensores() {
             return ascensores.map((x) => x.getPisoEnQueEsta());
