@@ -1011,30 +1011,285 @@ nota: Primero habia pensado en la funcionalidad del pasito siguiente (la de "Cua
 
 - Escribimos tests
 ````
+test("un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor", () => {
+    let edificio = crearEdificio(-2, 5, 4);
+    let posicionesBB = edificio.getPosicionesDeLosAscensores();
+
+    expect(posicionesBB).not.toContain(-2);
+    edificio.moverAscensorAPiso({ ascensor: 1, piso: -2 });
+    let posicionesBC = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesBC).toContain(-2);
+
+    expect(posicionesBC).not.toContain(5);
+    edificio.moverAscensorAPiso({ ascensor: 2, piso: 5 });
+    let posicionesBD = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesBD).toContain(5);
+
+    expect(posicionesBD).not.toContain(3);
+    edificio.moverAscensorAPiso({ ascensor: 3, piso: 3 });
+    let posicionesBF = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesBF).toContain(3);
+
+    expect(posicionesBF).not.toContain(1);
+    edificio.moverAscensorAPiso({ ascensor: 1, piso: 1 });
+    let posicionesBG = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesBG).toContain(1);
+
+    expect(posicionesBG).not.toContain(-1);
+    edificio.moverAscensorAPiso({ ascensor: 2, piso: -1 });
+    let posicionesBH = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesBH).toContain(-1);
+});
+
+test("el edificio se queja si se intenta mover un ascensor inexistente", () => {
+    let edificio = crearEdificio(-2, 5, 4);
+    //Asumiendo que el array de ascensores es 0,1,2,3
+    //probar los dos extremos
+    expect(() => edificio.moverAscensorAPiso({ ascensor: 4, piso: 1 })).toThrow(
+        Error
+    );
+    expect(() =>
+        edificio.moverAscensorAPiso({ ascensor: -1, piso: 1 })
+    ).toThrow(Error);
+    //y probar dos más lejos a ambos lados
+    expect(() =>
+        edificio.moverAscensorAPiso({ ascensor: 42, piso: 1 })
+    ).toThrow(Error);
+    expect(() =>
+        edificio.moverAscensorAPiso({ ascensor: -42, piso: 1 })
+    ).toThrow(Error);
+});
 ````
 
 - Escribimos lo mínimo de código funcional para que esos test se puedan ejecutar
 ````
+//añadir al archivo edificio.js
+
+        moverAscensorAPiso({ ascensor, piso }) {},
+
 ````
 
 - Comprobamos que los test fallan (RED)
 ````
+npm test edificio.test.js
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose edificio.test.js
+(node:23088) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ FAIL  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)                                                                                                   
+  × un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor (2 ms)                                                                     
+  × el edificio se queja si se intenta mover un ascensor inexistente (1 ms)                                                                                                
+                                                                                                                                                                           
+  ● un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor                                                                            
+                                                                                                                                                                           
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: -2
+    Received array: [0, 0, 0, 0]
+
+      22 |     edificio.moverAscensorAPiso({ ascensor: 1, piso: -2 });
+      23 |     let posicionesBC = edificio.getPosicionesDeLosAscensores();
+    > 24 |     expect(posicionesBC).toContain(-2);
+         |                          ^
+      25 |
+      26 |     expect(posicionesBC).not.toContain(5);
+      27 |     edificio.moverAscensorAPiso({ ascensor: 2, piso: 5 });
+
+      at Object.<anonymous> (edificio.test.js:24:26)
+
+  ● el edificio se queja si se intenta mover un ascensor inexistente
+
+    expect(received).toThrow(expected)
+
+    Expected constructor: Error
+
+    Received function did not throw
+
+      49 |     //Asumiendo que el array de ascensores es 0,1,2,3
+      50 |     //probar los dos extremos
+    > 51 |     expect(() => edificio.moverAscensorAPiso({ ascensor: 4, piso: 1 })).toThrow(
+         |                                                                         ^
+      52 |         Error
+      53 |     );
+      54 |     expect(() =>
+
+      at Object.<anonymous> (edificio.test.js:51:73)
+
+Test Suites: 1 failed, 1 total                                                                                                                                             
+Tests:       2 failed, 1 passed, 3 total                                                                                                                                   
+Snapshots:   0 total
+Time:        0.449 s, estimated 1 s
+Ran all test suites matching /edificio.test.js/i.
 ````
 
 - Escribimos lo mínimo de código funcional para que esos test pasen
 ````
+        moverAscensorAPiso({ ascensor, piso }) {
+            if (ascensor >= 0 && ascensor < ascensores.length) {
+                ascensores.at(ascensor).irAlPiso(piso);
+            } else {
+                throw new Error(
+                    `El edificio solo tiene ${ascensores.length} ascensores. No se puede mover el ascensor ${ascensor}.`
+                );
+            }
+        },
+
 ````
 
 - Comprobamos que los test pasan (GREEN)
 ````
+npm test edificio.test.js
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose edificio.test.js
+(node:20292) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ PASS  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)                                                                                                   
+  √ un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor (1 ms)                                                                     
+  √ el edificio se queja si se intenta mover un ascensor inexistente (9 ms)                                                                                                
+                                                                                                                                                                           
+Test Suites: 1 passed, 1 total                                                                                                                                             
+Tests:       3 passed, 3 total                                                                                                                                             
+Snapshots:   0 total
+Time:        0.424 s, estimated 1 s
+Ran all test suites matching /edificio.test.js/i.
 ````
 
 - Revisamos el trabajo y ajustamos lo que proceda ajustar (REFACTOR)
 ````
+//Usar "object destructuring" para simular parámetros con nombre en 'crearEdificio(...)'
+//igual que se ha hecho en 'moverAscensorAPiso(...)'
+
+//Acortar nombres de las variables 'posiciones....' en los test para hacerlos más legibles
+
+//Cambiar el indexado del array de ascensores del edificio.
+//Tal cual, por ejemplo, en un edifico de 4 ascensores estos son el 0, el 1, el 2 y el 3
+//El que el primer ascensor sea el cero puede dar lugar a errores.
+//Mejor si hacemos el ajuste ascensorindicado - 1
+//asi los ascensores serian el 1, el 2, el 3 y el 4 ; algo mucho más natural al llamarlos.
+
+
+../..
+
+function crearEdificio({
+    piso_mas_bajo,
+    piso_mas_alto,
+    cantidad_de_ascensores,
+}) {
+    let ascensores = [];
+    for (let i = 0; i < cantidad_de_ascensores; i++) {
+        ascensores.push(crearUnAscensor(piso_mas_bajo, piso_mas_alto));
+    }
+
+    return {
+        pulsarBotonDeLlamadaAlAscensorEnPiso(piso) {
+            try {
+                //TODO pendiente corregir, no se puede mandar siempre el primer ascensor
+                ascensores.at(1).irAlPiso(piso);
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        getPosicionesDeLosAscensores() {
+            return ascensores.map((x) => x.getPisoEnQueEsta());
+        },
+        moverAscensorAPiso({ ascensor, piso }) {
+            //El indexado de los array javascript empieza en 0 , (por ejemplo 4 ascensores serian el 0, el 1, el 2 y el 3)
+            //Pero para humanos es más claro que el primer ascensor sea el 1, (por ejemplo 4 ascensores serian el 1, el 2, el 3 y el 4)
+            if (ascensor >= 1 && ascensor <= ascensores.length) {
+                ascensores.at(ascensor - 1).irAlPiso(piso);
+            } else {
+                throw new Error(
+                    `El edificio solo tiene ${ascensores.length} ascensores. No se puede mover el ascensor ${ascensor}.`
+                );
+            }
+        },
+    };
+}
+
+../..
+
+
+
+test("acude un ascensor al piso cuando se pulsa el boton de llamada", () => {
+    let edificio = crearEdificio({
+        piso_mas_bajo: -2,
+        piso_mas_alto: 5,
+        cantidad_de_ascensores: 4,
+    });
+
+    let posicionesAntes = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesAntes).not.toContain(3);
+
+    edificio.pulsarBotonDeLlamadaAlAscensorEnPiso(3);
+
+    let posicionesDespues = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesDespues).toContain(3);
+});
+
+../..
+
+test("el edificio se queja si se intenta mover un ascensor inexistente", () => {
+    let edificio = crearEdificio({
+        piso_mas_bajo: -2,
+        piso_mas_alto: 5,
+        cantidad_de_ascensores: 4,
+    });
+    //Asumiendo que el array de ascensores es 1,2,3,4
+    //probar los dos extremos
+    expect(() => edificio.moverAscensorAPiso({ ascensor: 5, piso: 1 })).toThrow(
+        Error
+    );
+    expect(() => edificio.moverAscensorAPiso({ ascensor: 0, piso: 1 })).toThrow(
+        Error
+    );
+    //y probar dos más lejos a ambos lados
+    expect(() =>
+        edificio.moverAscensorAPiso({ ascensor: 42, piso: 1 })
+    ).toThrow(Error);
+    expect(() =>
+        edificio.moverAscensorAPiso({ ascensor: -42, piso: 1 })
+    ).toThrow(Error);
+});
+
+../..
+
 ````
 
 - Antes de dar por terminado el pasito. Hay que ejecutar por lo menos una vez todos los test del programa; para comprobar que todos pasan y no hemos roto nada de lo ya existente.
 ````
+npm test
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose
+(node:24160) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ PASS  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)                                                                                                   
+  √ un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor (1 ms)                                                                     
+  √ el edificio se queja si se intenta mover un ascensor inexistente (8 ms)                                                                                                
+                                                                                                                                                                           
+ PASS  ./index.test.js                                                                                                                                                     
+  √ este test pasa (2 ms)
+  √ una funcion de pruebas provoca una excepcion (9 ms)                                                                                                                    
+  ○ skipped este test falla                                                                                                                                                
+                                                                                                                                                                           
+ PASS  ./ascensor.test.js                                                                                                                                                  
+  √ el ascensor puede ir a un piso válido (1 ms)
+  √ el ascensor se queda quieto donde este si se indica un piso invalido (6 ms)                                                                                            
+  √ el ascensor se queja si se indica un piso invalido (1 ms)                                                                                                              
+                                                                                                                                                                           
+Test Suites: 3 passed, 3 total                                                                                                                                             
+Tests:       1 skipped, 8 passed, 9 total                                                                                                                                  
+Snapshots:   0 total
+Time:        0.763 s, estimated 1 s
+Ran all test suites.
 ````
 
 
@@ -1045,42 +1300,179 @@ Elegimos una funcionalidad: "Cuando pulsa el botón de llamada en un piso, viene
 
 - Escribimos tests
 ````
+test("acude el ascensor mas cercano al piso cuando se pulsa el boton de llamada", () => {
+    let edificio = crearEdificio({
+        piso_mas_bajo: -2,
+        piso_mas_alto: 5,
+        cantidad_de_ascensores: 4,
+    });
+
+    edificio.moverAscensorAPiso({ ascensor: 1, piso: -2 });
+    edificio.moverAscensorAPiso({ ascensor: 2, piso: -2 });
+    edificio.moverAscensorAPiso({ ascensor: 3, piso: -2 });
+    edificio.moverAscensorAPiso({ ascensor: 4, piso: 1 });
+
+    let posicionesAntesBB = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesAntesBB).not.toContain(3);
+    edificio.pulsarBotonDeLlamadaAlAscensorEnPiso(3);
+    let posicionesDespuesBB = edificio.getPosicionesDeLosAscensores();
+    //nosotros compensamos para que los ascensores sean 1, 2, 3 y 4
+    //pero el array javascript sigue teniendo índices 0, 1, 2 y 3
+    //por tanto, el ascensor 4 es el índice .at(3)
+    expect(posicionesDespuesBB.at(3)).toBe(3);
+
+    edificio.moverAscensorAPiso({ ascensor: 1, piso: 5 });
+    edificio.moverAscensorAPiso({ ascensor: 2, piso: 5 });
+    edificio.moverAscensorAPiso({ ascensor: 3, piso: 2 });
+    edificio.moverAscensorAPiso({ ascensor: 4, piso: 5 });
+
+    let posicionesAntesBC = edificio.getPosicionesDeLosAscensores();
+    expect(posicionesAntesBC).not.toContain(-1);
+    edificio.pulsarBotonDeLlamadaAlAscensorEnPiso(-1);
+    let posicionesDespuesBC = edificio.getPosicionesDeLosAscensores();
+    //¡ojo! al indexado de arrays, como se ha comentado antes; el ascensor 3 es el índice 2
+    expect(posicionesDespuesBC.at(2)).toBe(-1);
+});
 ````
 
 - Escribimos lo mínimo de código funcional para que esos test se puedan ejecutar
 ````
+//no es necesario escribir nada
 ````
 
-- Comprobamos que los test fallan (RED)
+- Comprobamos que el test falla (RED)
 ````
+npm test edificio.test.js
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose edificio.test.js
+(node:20540) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ FAIL  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)                                                                                                                    
+  × acude el ascensor mas cercano al piso cuando se pulsa el boton de llamada (1 ms)                                                                                                        
+  √ un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor (3 ms)                                                                                      
+  √ el edificio se queja si se intenta mover un ascensor inexistente (6 ms)                                                                                                                 
+                                                                                                                                                                                            
+  ● acude el ascensor mas cercano al piso cuando se pulsa el boton de llamada                                                                                                               
+                                                                                                                                                                                            
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 1
+
+      36 |     //pero el array javascript sigue teniendo índices 0, 1, 2 y 3
+      37 |     //por tanto, el ascensor 4 es el índice .at(3)
+    > 38 |     expect(posicionesDespuesBB.at(3)).toBe(3);
+         |                                       ^
+      39 |
+
+      at Object.<anonymous> (edificio.test.js:38:39)
+
+Test Suites: 1 failed, 1 total                                                                                                                                                              
+Tests:       1 failed, 3 passed, 4 total                                                                                                                                                    
+Snapshots:   0 total
+Time:        0.774 s, estimated 1 s
+Ran all test suites matching /edificio.test.js/i.
 ````
 
-- Escribimos lo mínimo de código funcional para que esos test pasen
+- Escribimos lo mínimo de código funcional para que el test pase
 ````
+        pulsarBotonDeLlamadaAlAscensorEnPiso(piso) {
+            var distancia_mas_pequeina = Number.MAX_SAFE_INTEGER;
+            var ascensor_mas_cercano = 0;
+            for (let i = 0; i < ascensores.length; i++) {
+                if (
+                    Math.abs(piso - ascensores.at(i).getPisoEnQueEsta()) <
+                    distancia_mas_pequeina
+                ) {
+                    distancia_mas_pequeina = Math.abs(
+                        piso - ascensores.at(i).getPisoEnQueEsta()
+                    );
+                    ascensor_mas_cercano = i;
+                }
+            }
+            try {
+                ascensores.at(ascensor_mas_cercano).irAlPiso(piso);
+            } catch (error) {
+                console.error(error);
+            }
+        },
 ````
 
-- Comprobamos que los test pasan (GREEN)
+- Comprobamos que el test pasa (GREEN)
 ````
+npm test edificio.test.js
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose edificio.test.js
+(node:9532) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ PASS  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)
+  √ acude el ascensor mas cercano al piso cuando se pulsa el boton de llamada (1 ms)                                                                                                        
+  √ un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor (1 ms)                                                                                      
+  √ el edificio se queja si se intenta mover un ascensor inexistente (10 ms)                                                                                                                
+                                                                                                                                                                                            
+Test Suites: 1 passed, 1 total                                                                                                                                                              
+Tests:       4 passed, 4 total                                                                                                                                                              
+Snapshots:   0 total
+Time:        0.423 s, estimated 1 s
+Ran all test suites matching /edificio.test.js/i.
 ````
 
 - Revisamos el trabajo y ajustamos lo que proceda ajustar (REFACTOR)
 ````
+test("un ascensor se mueve al piso indicado cuando se pulsa en la botonera dentro de ese ascensor", () => {
+//mejor:
+test("un ascensor se mueve al piso indicado cuando se pulsa su botonera", () => {
 ````
 
 - Antes de dar por terminado el pasito. Hay que ejecutar por lo menos una vez todos los test del programa; para comprobar que todos pasan y no hemos roto nada de lo ya existente.
 ````
+npm test
+
+> ascensores@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose
+(node:24352) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ PASS  ./edificio.test.js
+  √ acude un ascensor al piso cuando se pulsa el boton de llamada (2 ms)                                                                                                                    
+  √ acude el ascensor mas cercano al piso cuando se pulsa el boton de llamada (1 ms)                                                                                                        
+  √ un ascensor se mueve al piso indicado cuando se pulsa su botonera (1 ms)                                                                                                                
+  √ el edificio se queja si se intenta mover un ascensor inexistente (7 ms)                                                                                                                 
+                                                                                                                                                                                            
+ PASS  ./index.test.js                                                                                                                                                                      
+  √ este test pasa (1 ms)
+  √ una funcion de pruebas provoca una excepcion (6 ms)                                                                                                                                     
+  ○ skipped este test falla                                                                                                                                                                 
+                                                                                                                                                                                            
+ PASS  ./ascensor.test.js                                                                                                                                                                   
+  √ el ascensor puede ir a un piso válido (1 ms)
+  √ el ascensor se queda quieto donde este si se indica un piso invalido (8 ms)                                                                                                             
+  √ el ascensor se queja si se indica un piso invalido (1 ms)                                                                                                                               
+                                                                                                                                                                                            
+Test Suites: 3 passed, 3 total                                                                                                                                                              
+Tests:       1 skipped, 9 passed, 10 total                                                                                                                                                  
+Snapshots:   0 total
+Time:        0.793 s, estimated 1 s
+Ran all test suites.
 ````
 
 
 ## commit
 
-Tenemos un edificio con varios ascensores con la funcionalidad básica para usarlos. Se podria tener mejores algoritmos de gestión de los ascensores, pero por lo menos es algo que funciona y podria ser útil para algo. Lo incorporamos al repositorio de código comunal...
+Tenemos un edificio con varios ascensores con la funcionalidad básica para usarlos. Se podria tener mejores algoritmos para gestionar los ascensores, pero por lo menos es algo que funciona y podria ser útil para algo. Lo incorporamos al repositorio de código comunal...
 
 nota: En el camino, antes de este commit hemos podido hacer otros commits de cada pasito en nuestra propia rama local de trabajo. Pero aquí estamos hablando de mergear esa rama local con la principal del repositorio `origin`.
 
 
 ## pasito
 
+...
 
 
 ## pasito...
