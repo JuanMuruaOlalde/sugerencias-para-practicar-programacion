@@ -163,7 +163,7 @@ https://jestjs.io/docs/es6-class-mocks
 
 Para cualquier lenguaje y plataforma de programación, existen multiples plataformas para correr tests. Javascript no es menos. La cuestión es mirar qué hay en el mercado, probar algunas, y escoger la que mejor cubra nuestras necesidades.
 
-En estos momentos (2025), Jest es una de las más utilizadas ?. Seguida de Mocha o Jasmine ?. Pero los propios motores "off-browser" (Node, Deno,...) están empezando a incorporar sus propias plataformas de testing integradas en ellos.
+En estos momentos (2025), Jest es una de las más utilizadas ?. Seguida de Mocha o Jasmine ?. Pero los propios motores "off-browser" (Node, Deno,...) están empezando a incorporar sus propias plataformas de testing para test unitarios, integradas en ellos.
 
 Además de la plataforma Jest, estas son algunas otras:
 
@@ -188,3 +188,17 @@ https://github.com/lukeed/uvu
 https://github.com/tape-testing/tape
 
 https://qunitjs.com
+
+
+nota: Aprovecho para citar también algunas plataformas de testing “end-to-end”:
+
+https://playwright.dev/
+
+https://www.selenium.dev/
+
+https://www.cypress.io/
+
+Simplemente por si hicera falta testear también el interfaz de usuario en casos completos de uso.
+
+nota: un ejemplo ilustrativo de tests “end-to-end” en un [ejercicio para github copilot](https://docs.github.com/en/copilot/example-prompts-for-github-copilot-chat/testing-code/create-end-to-end-tests-for-a-webpage)
+
