@@ -1,6 +1,6 @@
 nota: Este ejercicio intenta ser un proyecto de una cierta (gran) envergadura. Se puede complementar con todo aquello que se nos ocurra. Lo que se cita aquí son solo algunas ideas de por dónde comenzar a trabajar.
 
-nota: una muestra de posible solución en https://github.com/JuanMuruaOlalde/Hotel
+nota: un par de muestras de posibles soluciones están en [Hotel-Java](https://github.com/JuanMuruaOlalde/Hotel-Java) y en [Hotel-Rust](https://github.com/JuanMuruaOlalde/Hotel-Rust)
 
 
 # Entidades a contemplar
